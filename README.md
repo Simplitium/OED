@@ -1,2 +1,5 @@
 # OED
-Open Exposure Data
+
+Open Exposure Data 
+
+Release: September 2018
