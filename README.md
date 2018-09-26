@@ -14,19 +14,7 @@ This work would not have been possible without the above group and their support
                 
 The availability of an open code-set was extremely helpful to the development of OED. We thank AIR Worldwide for opening up their CEDE schema to the industry.   
                 
-OED comprises four input tables and 27 relational database tables.           
-                
-This spreadsheet contains the specification of each OED field for both the input tables and the database tables.   
-                
-Permissable values within each field (where relevant) are provided in the six 'Value' sheets.          
-                
-Documentation describing the OED is available at:             
-
-https://github.com/Simplitium/OED
-                
-Feature requests and errors can be submitted through the GitHub repo here:      
-                
-https://github.com/Simplitium/OED/issues
+OED comprises four input tables and 20+ relational database tables.           
                 
 For any queries relating to OED contact: 
                 
