@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/simplitium/OED/master/ModEx.png" width=500></img>
 
-# OED
+# Open Exposure Data (OED)
 
 The OED format was instigated by Simplitium and has been created for use as the input format to Oasis based models.                
                 
