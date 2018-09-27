@@ -26,4 +26,4 @@ The content of the Open Exposure Data (OED) format itself is licensed under the 
                 
 Any related MS SQL scripts provided and used to generate the relational database structure are licensed under the MIT license.        
 
-<a href="https://github.com/Simplitium/OED/blob/master/LICENSE.md">View the full license</a>
+<a href="https://github.com/Simplitium/OED/blob/master/LICENSE.md">View the full license.</a>
