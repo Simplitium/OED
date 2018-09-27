@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/simplitium/OED/master/ModEx.png" width=500></img>
+<img src="https://www.simplitium.com/hubfs/logo/modex-by-simplitium.png?t=1538034253743" width=500></img>
 
 # Open Exposure Data (OED)
 
