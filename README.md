@@ -6,7 +6,9 @@
 
 The OED format was instigated by Simplitium and has been created for use as the input format to Oasis based models.                
                 
-It is also designed to be suitable as a model-developer-agnostic format that can be used as a basis for an insurer's exposure data repository.            
+It is also designed to be suitable as a model-developer-agnostic format that can be used as a basis for an insurer's exposure data repository.
+
+<a href="https://github.com/Simplitium/OED/archive/master.zip"><b>Download OED specification.</b></a>
                 
 The work to create OED was carried out by a small working group of industry practitioners chaired by Matthew Jones with the technical work led by Aiste Kalinauskaite.            
                 
