@@ -10,11 +10,7 @@ It is also designed to be suitable as a model-developer-agnostic format that can
 
 <a href="https://github.com/Simplitium/OED/archive/master.zip"><b>Download OED specification.</b></a>
                 
-The work to create OED was carried out by a small working group of industry practitioners chaired by Matthew Jones with the technical work led by Aiste Kalinauskaite.            
-                
-The group comprised Joh Carter, James Havard, Ben Hayes, Tom Hughes, James Lay, Tristan Lloyd, Rob Porter, Matt Raywood, Marek Shafer and Tim Spencer.            
-                
-This work would not have been possible without the above group and their supporting organizations: Ascot, Canopius, Oasis, and Simplitium.    
+The work to create OED was carried out by a working group of industry practitioners chaired by Matthew Jones with the technical work led by Aiste Kalinauskaite.               
                 
 The availability of an open code-set was extremely helpful to the development of OED. We thank AIR Worldwide for opening up their CEDE schema to the industry.   
                 
