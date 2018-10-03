@@ -1,4 +1,4 @@
-# SQL
+# SQL Scripts
 
 There are 3 script files to create OED DB and populate respective reference tables. They all should be run in the order they are numbered.
 
