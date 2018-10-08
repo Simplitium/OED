@@ -20,7 +20,7 @@ For any queries relating to OED contact:
                 
 oed@simplitium.com
                 
-However note that as OED is open and free, we cannot guarantee a response to all queries from non-Simplitium customers.         
+However note that we cannot guarantee a response to all queries from non-Simplitium customers.         
                 
 The content of the Open Exposure Data (OED) format itself is licensed under the CC0 1.0 Universal license.             
                 
