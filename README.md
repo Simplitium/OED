@@ -1,5 +1,5 @@
 <a href="https://www.simplitium.com/modex" target="_blank">
-  <img src="https://www.simplitium.com/hubfs/logo/modex-by-simplitium.png?t=1538034253743" width=500></img>
+  <img src="https://www.simplitium.com/hubfs/logo/modex-by-simplitium.png?t=1538034253743" width=250></img>
 </a>
 
 # Open Exposure Data (OED)
