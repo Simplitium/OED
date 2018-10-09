@@ -14,7 +14,9 @@ The work to create OED was carried out by a working group of industry practition
                 
 The availability of an open code-set was extremely helpful to the development of OED. We thank AIR Worldwide for opening up their CEDE schema to the industry.   
                 
-OED comprises four input tables and 20+ relational database tables. View the database creation scripts <b><a href="https://github.com/Simplitium/OED/tree/master/SQL%20Scripts">here.</a></b>
+OED comprises four input tables and 20+ relational database tables. 
+
+<b><a href="https://github.com/Simplitium/OED/tree/master/SQL%20Scripts">View the OED database SQL scripts.</a></b>
                 
 For any queries relating to OED contact: 
                 
