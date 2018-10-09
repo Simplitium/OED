@@ -18,7 +18,7 @@ OED comprises four input tables and 20+ relational database tables.
                 
 For any queries relating to OED contact: 
                 
-oed@simplitium.com
+<b>oed@simplitium.com</b>
                 
 However note that we cannot guarantee a response to all queries from non-Simplitium customers.         
                 
@@ -26,4 +26,4 @@ The content of the Open Exposure Data (OED) format itself is licensed under the 
                 
 Any related MS SQL scripts provided and used to generate the relational database structure are licensed under the MIT license.        
 
-<a href="https://github.com/Simplitium/OED/blob/master/LICENSE.md">View the full license.</a>
+<b><a href="https://github.com/Simplitium/OED/blob/master/LICENSE.md">View the full license.</a></b>
