@@ -10,9 +10,7 @@
   o	Locations table:
   
     -	LocInceptionDate
-    
     -	LocExpiryDate
-    
     -	CompletionDate
     
   o	Policies table:
