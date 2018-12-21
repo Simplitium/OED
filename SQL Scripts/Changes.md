@@ -1,6 +1,7 @@
 # Changes to OED DB
 
 ## OED v1.0.1:
+
 •	Updates to data types:
 
   o	Smallint to float (previously too restrictive, needed a data type that accepts decimals): FirstFloorHeight, GroundElevation,    BaseFloodElevation, BuildingHeight, FloodDefenseHeight in LocationDetails table
@@ -16,13 +17,11 @@
   o	Policies table:
   
     -	InceptionDate
-    
     -	ExpiryDate
     
   o	ReinsuranceInfo table:
   
     -	ReinsInceptionDate
-    
     -	ReinsExpiryDate
     
 •	Default values removed from:
@@ -30,13 +29,9 @@
   o	Locations table (redundant default):
   
     -	CompletionDate
-    
     -	BuildingTIV
-    
     -	OtherTIV
-    
     -	ContentsTIV
-    
     -	BITIV
     
   o	ReinsuranceInfo table (requesting the field to always be populated by the user, making default redundant):
@@ -48,7 +43,6 @@
   o	Portfolios table – added getdate():
   
     -	CreatedOn
-    
     -	EditedOn
 
 •	Fields renamed:
