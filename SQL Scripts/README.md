@@ -7,7 +7,7 @@ There are 3 script files to create OED DB and populate respective reference tabl
 
 •	Update your file paths – for DB and log - to where your DBs are normally saved (for log file as well!):
 
-*C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_v1.0.mdf*
+*C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_v1.0.1.mdf*
 
 ## 2. Populate reference tables:
 •	Update database name, if you renamed OED_v1.0.1 in the first script.
