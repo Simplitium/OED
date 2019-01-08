@@ -1,4 +1,4 @@
-USE [OED_v1.0.1]
+USE [OED]
 GO
 INSERT [dbo].[xAddressMatch] ([Code], [CodeDescription]) VALUES (0, N'Ungeocoded')
 GO
