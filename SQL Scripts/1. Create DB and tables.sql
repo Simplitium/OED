@@ -1,83 +1,136 @@
 USE [master]
 GO
-/****** Object:  Database [OED_v1.0.1]    Script Date: 13/12/2018 14:40:54 ******/
-CREATE DATABASE [OED_v1.0.1]
+/****** Object:  Database [OED]    Script Date: 08/01/2019 15:31:13 ******/
+CREATE DATABASE [OED]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'OED_v1.0.1', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_v1.0.1.mdf' , SIZE = 4091328KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'OED', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED.mdf' , SIZE = 4091328KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'OED_v1.0.1_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_v1.0.1_log.ldf' , SIZE = 8913920KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'OED_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_log.ldf' , SIZE = 8913920KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
-ALTER DATABASE [OED_v1.0.1] SET COMPATIBILITY_LEVEL = 120
+ALTER DATABASE [OED] SET COMPATIBILITY_LEVEL = 120
 GO
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 begin
-EXEC [OED_v1.0.1].[dbo].[sp_fulltext_database] @action = 'enable'
+EXEC [OED].[dbo].[sp_fulltext_database] @action = 'enable'
 end
 GO
-ALTER DATABASE [OED_v1.0.1] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [OED] SET ANSI_NULL_DEFAULT OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET ANSI_NULLS OFF 
+ALTER DATABASE [OED] SET ANSI_NULLS OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET ANSI_PADDING OFF 
+ALTER DATABASE [OED] SET ANSI_PADDING OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [OED] SET ANSI_WARNINGS OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET ARITHABORT OFF 
+ALTER DATABASE [OED] SET ARITHABORT OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET AUTO_CLOSE OFF 
+ALTER DATABASE [OED] SET AUTO_CLOSE OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET AUTO_SHRINK OFF 
+ALTER DATABASE [OED] SET AUTO_SHRINK OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [OED] SET AUTO_UPDATE_STATISTICS ON 
 GO
-ALTER DATABASE [OED_v1.0.1] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [OED] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [OED] SET CURSOR_DEFAULT  GLOBAL 
 GO
-ALTER DATABASE [OED_v1.0.1] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [OED] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [OED] SET NUMERIC_ROUNDABORT OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [OED] SET QUOTED_IDENTIFIER OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [OED] SET RECURSIVE_TRIGGERS OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET  DISABLE_BROKER 
+ALTER DATABASE [OED] SET  DISABLE_BROKER 
 GO
-ALTER DATABASE [OED_v1.0.1] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [OED] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [OED] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET TRUSTWORTHY OFF 
+ALTER DATABASE [OED] SET TRUSTWORTHY OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [OED] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [OED] SET PARAMETERIZATION SIMPLE 
 GO
-ALTER DATABASE [OED_v1.0.1] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [OED] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [OED] SET HONOR_BROKER_PRIORITY OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET RECOVERY SIMPLE 
+ALTER DATABASE [OED] SET RECOVERY SIMPLE 
 GO
-ALTER DATABASE [OED_v1.0.1] SET  MULTI_USER 
+ALTER DATABASE [OED] SET  MULTI_USER 
 GO
-ALTER DATABASE [OED_v1.0.1] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [OED] SET PAGE_VERIFY CHECKSUM  
 GO
-ALTER DATABASE [OED_v1.0.1] SET DB_CHAINING OFF 
+ALTER DATABASE [OED] SET DB_CHAINING OFF 
 GO
-ALTER DATABASE [OED_v1.0.1] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+ALTER DATABASE [OED] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
-ALTER DATABASE [OED_v1.0.1] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+ALTER DATABASE [OED] SET TARGET_RECOVERY_TIME = 60 SECONDS 
 GO
-ALTER DATABASE [OED_v1.0.1] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [OED] SET DELAYED_DURABILITY = DISABLED 
 GO
-EXEC sys.sp_db_vardecimal_storage_format N'OED_v1.0.1', N'ON'
+EXEC sys.sp_db_vardecimal_storage_format N'OED', N'ON'
 GO
-USE [OED_v1.0.1]
+USE [OED]
 GO
-/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  UserDefinedFunction [dbo].[BinaryToDecimal]    Script Date: 08/01/2019 15:31:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [dbo].[BinaryToDecimal]
+(
+    @Input varchar(255)
+)
+RETURNS bigint
+AS
+BEGIN
+
+    DECLARE @Cnt tinyint = 1
+    DECLARE @Len tinyint = LEN(@Input)
+    DECLARE @Output bigint = CAST(SUBSTRING(@Input, @Len, 1) AS bigint)
+
+    WHILE(@Cnt < @Len) BEGIN
+        SET @Output = @Output + POWER(CAST(SUBSTRING(@Input, @Len - @Cnt, 1) * 2 AS bigint), @Cnt)
+
+        SET @Cnt = @Cnt + 1
+    END
+
+    RETURN @Output    
+
+END
+GO
+/****** Object:  UserDefinedFunction [dbo].[DecimalToBinary]    Script Date: 08/01/2019 15:31:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [dbo].[DecimalToBinary]
+(
+    @Input bigint
+)
+RETURNS varchar(255)
+AS
+BEGIN
+
+    DECLARE @Output varchar(255) = ''
+
+    WHILE @Input > 0 BEGIN
+
+        SET @Output = @Output + CAST((@Input % 2) AS varchar)
+        SET @Input = @Input / 2
+
+    END
+
+    RETURN REVERSE(@Output)
+
+END
+GO
+/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +156,7 @@ CREATE TABLE [dbo].[AccountFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Accounts]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Accounts]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +186,7 @@ CREATE TABLE [dbo].[Accounts](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Cedants]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Cedants]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -152,7 +205,7 @@ CREATE TABLE [dbo].[Cedants](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -178,7 +231,7 @@ CREATE TABLE [dbo].[ConditionFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Conditions]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Conditions]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -200,7 +253,7 @@ CREATE TABLE [dbo].[Conditions](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,7 +274,7 @@ CREATE TABLE [dbo].[FlexiAcc](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -242,7 +295,7 @@ CREATE TABLE [dbo].[FlexiLoc](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiPol]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[FlexiPol]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -263,7 +316,7 @@ CREATE TABLE [dbo].[FlexiPol](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LOB]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[LOB]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -282,7 +335,7 @@ CREATE TABLE [dbo].[LOB](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocationDetails]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[LocationDetails]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -385,7 +438,7 @@ CREATE TABLE [dbo].[LocationDetails](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -412,7 +465,7 @@ CREATE TABLE [dbo].[LocationFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Locations]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Locations]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -494,7 +547,7 @@ CREATE TABLE [dbo].[Locations](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocCond]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[LocCond]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -513,7 +566,7 @@ CREATE TABLE [dbo].[LocCond](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[LocPol]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[LocPol]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -530,7 +583,7 @@ CREATE TABLE [dbo].[LocPol](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Policies]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Policies]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -574,7 +627,7 @@ CREATE TABLE [dbo].[Policies](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -600,7 +653,7 @@ CREATE TABLE [dbo].[PolicyFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PortAcc]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[PortAcc]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -616,7 +669,7 @@ CREATE TABLE [dbo].[PortAcc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Portfolios]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Portfolios]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -639,7 +692,7 @@ CREATE TABLE [dbo].[Portfolios](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Producers]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[Producers]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -658,7 +711,7 @@ CREATE TABLE [dbo].[Producers](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -675,7 +728,7 @@ CREATE TABLE [dbo].[ReinsAcc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -694,7 +747,7 @@ CREATE TABLE [dbo].[ReinsLoc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsPol]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsPol]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -711,7 +764,24 @@ CREATE TABLE [dbo].[ReinsPol](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsPort]    Script Date: 08/01/2019 15:31:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ReinsPort](
+	[ReinsPortID] [bigint] NOT NULL,
+	[ReinsID] [bigint] NOT NULL,
+	[PortID] [bigint] NOT NULL,
+	[CededPercent] [float] NULL,
+ CONSTRAINT [PK_ReinsPort] PRIMARY KEY CLUSTERED 
+(
+	[ReinsPortID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -728,7 +798,7 @@ CREATE TABLE [dbo].[ReinsReinstatements](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -774,7 +844,7 @@ CREATE TABLE [dbo].[ReinsuranceInfo](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -805,7 +875,7 @@ CREATE TABLE [dbo].[ReinsuranceScope](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[StepFunctions]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[StepFunctions]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -835,7 +905,7 @@ CREATE TABLE [dbo].[StepFunctions](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[WorkersComp]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[WorkersComp]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -852,7 +922,7 @@ CREATE TABLE [dbo].[WorkersComp](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -871,7 +941,7 @@ CREATE TABLE [dbo].[xAddressMatch](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -890,7 +960,7 @@ CREATE TABLE [dbo].[xAppurtenantStructure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAreaCode]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xAreaCode]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -912,7 +982,7 @@ CREATE TABLE [dbo].[xAreaCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -931,7 +1001,7 @@ CREATE TABLE [dbo].[xAttachmentBasis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBasement]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xBasement]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -950,7 +1020,7 @@ CREATE TABLE [dbo].[xBasement](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -969,7 +1039,7 @@ CREATE TABLE [dbo].[xBIPreparedness](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 13/12/2018 14:40:54 ******/
+/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -988,7 +1058,7 @@ CREATE TABLE [dbo].[xBIRedundancy](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1007,7 +1077,7 @@ CREATE TABLE [dbo].[xBrickVeneer](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1026,7 +1096,7 @@ CREATE TABLE [dbo].[xBuildingCondition](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1045,7 +1115,7 @@ CREATE TABLE [dbo].[xBuildingExteriorOpening](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1064,7 +1134,7 @@ CREATE TABLE [dbo].[xBuildingShape](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xBuildingType]    Script Date: 08/01/2019 15:31:13 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1083,7 +1153,7 @@ CREATE TABLE [dbo].[xBuildingType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xChimney]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xChimney]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1102,7 +1172,7 @@ CREATE TABLE [dbo].[xChimney](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCladding]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xCladding]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1121,7 +1191,7 @@ CREATE TABLE [dbo].[xCladding](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xConstruction]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xConstruction]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1139,7 +1209,7 @@ CREATE TABLE [dbo].[xConstruction](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1159,7 +1229,7 @@ CREATE TABLE [dbo].[xConstructionQuality](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1179,7 +1249,7 @@ CREATE TABLE [dbo].[xContentsFloodVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1199,7 +1269,7 @@ CREATE TABLE [dbo].[xContentsQuakeVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1219,7 +1289,7 @@ CREATE TABLE [dbo].[xContentsWindVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1240,7 +1310,7 @@ CREATE TABLE [dbo].[xCountryCodes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCoverages]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xCoverages]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1259,7 +1329,7 @@ CREATE TABLE [dbo].[xCoverages](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1278,7 +1348,7 @@ CREATE TABLE [dbo].[xCrippleWall](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCurrency]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xCurrency]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1301,7 +1371,7 @@ CREATE TABLE [dbo].[xCurrency](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xDedCode]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xDedCode]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1321,7 +1391,7 @@ CREATE TABLE [dbo].[xDedCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xDedType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xDedType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1340,7 +1410,7 @@ CREATE TABLE [dbo].[xDedType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xEQ]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xEQ]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1350,7 +1420,7 @@ CREATE TABLE [dbo].[xEQ](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1369,7 +1439,7 @@ CREATE TABLE [dbo].[xEquipmentBracing](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1388,7 +1458,7 @@ CREATE TABLE [dbo].[xExternalDoors](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFatigue]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFatigue]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1407,7 +1477,7 @@ CREATE TABLE [dbo].[xFatigue](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1426,7 +1496,7 @@ CREATE TABLE [dbo].[xFEMACompliance](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFlashing]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFlashing]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1445,7 +1515,7 @@ CREATE TABLE [dbo].[xFlashing](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1464,7 +1534,7 @@ CREATE TABLE [dbo].[xFloodDebrisResilience](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1483,7 +1553,7 @@ CREATE TABLE [dbo].[xFoundationConnection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFoundationType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFoundationType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1502,7 +1572,7 @@ CREATE TABLE [dbo].[xFoundationType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFXRates]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xFXRates]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1520,7 +1590,7 @@ CREATE TABLE [dbo].[xFXRates](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1535,7 +1605,7 @@ CREATE TABLE [dbo].[xGeogScheme](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xGlassType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xGlassType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1554,7 +1624,7 @@ CREATE TABLE [dbo].[xGlassType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1573,7 +1643,7 @@ CREATE TABLE [dbo].[xGroundEquipment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1592,7 +1662,7 @@ CREATE TABLE [dbo].[xInternalPartition](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLatticeType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xLatticeType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1611,7 +1681,7 @@ CREATE TABLE [dbo].[xLatticeType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLimitCode]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xLimitCode]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1630,7 +1700,7 @@ CREATE TABLE [dbo].[xLimitCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLimitType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xLimitType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1650,7 +1720,7 @@ CREATE TABLE [dbo].[xLimitType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1669,7 +1739,7 @@ CREATE TABLE [dbo].[xMechanicalEquipmentSide](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1688,7 +1758,7 @@ CREATE TABLE [dbo].[xMultiStoryHall](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xOccupancy]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xOccupancy]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1706,7 +1776,7 @@ CREATE TABLE [dbo].[xOccupancy](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1725,7 +1795,7 @@ CREATE TABLE [dbo].[xOrnamentation](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPackaging]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xPackaging]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1744,7 +1814,7 @@ CREATE TABLE [dbo].[xPackaging](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1764,7 +1834,7 @@ CREATE TABLE [dbo].[xPayoutBasis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1808,7 +1878,7 @@ CREATE TABLE [dbo].[xPerilCodeLookup](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1828,7 +1898,7 @@ CREATE TABLE [dbo].[xPerilCodes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPounding]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xPounding]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1847,7 +1917,7 @@ CREATE TABLE [dbo].[xPounding](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xProtection]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xProtection]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1866,7 +1936,7 @@ CREATE TABLE [dbo].[xProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRedundancy]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRedundancy]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1885,7 +1955,7 @@ CREATE TABLE [dbo].[xRedundancy](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xReinsType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xReinsType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1904,7 +1974,7 @@ CREATE TABLE [dbo].[xReinsType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRetrofit]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRetrofit]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1923,7 +1993,7 @@ CREATE TABLE [dbo].[xRetrofit](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1943,7 +2013,7 @@ CREATE TABLE [dbo].[xRiskLevel](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1962,7 +2032,7 @@ CREATE TABLE [dbo].[xRoofAnchorage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1981,7 +2051,7 @@ CREATE TABLE [dbo].[xRoofAttachedStructures](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofCover]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofCover]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2000,7 +2070,7 @@ CREATE TABLE [dbo].[xRoofCover](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2019,7 +2089,7 @@ CREATE TABLE [dbo].[xRoofCoverAttachment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2038,7 +2108,7 @@ CREATE TABLE [dbo].[xRoofDeck](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2057,7 +2127,7 @@ CREATE TABLE [dbo].[xRoofDeckAttachment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2076,7 +2146,7 @@ CREATE TABLE [dbo].[xRoofEquipment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2095,7 +2165,7 @@ CREATE TABLE [dbo].[xRoofFrame](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2114,7 +2184,7 @@ CREATE TABLE [dbo].[xRoofGeometry](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2133,7 +2203,7 @@ CREATE TABLE [dbo].[xRoofMaintenance](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2152,7 +2222,7 @@ CREATE TABLE [dbo].[xRoofPitch](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2171,7 +2241,7 @@ CREATE TABLE [dbo].[xSalvageProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2190,7 +2260,7 @@ CREATE TABLE [dbo].[xServiceEquipmentProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2210,7 +2280,7 @@ CREATE TABLE [dbo].[xShapeIrregularity](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xShortColumn]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xShortColumn]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2229,7 +2299,7 @@ CREATE TABLE [dbo].[xShortColumn](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2248,7 +2318,7 @@ CREATE TABLE [dbo].[xSmallDebris](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSoftStory]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xSoftStory]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2267,7 +2337,7 @@ CREATE TABLE [dbo].[xSoftStory](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2286,7 +2356,7 @@ CREATE TABLE [dbo].[xSpecialEQConstruction](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2305,7 +2375,7 @@ CREATE TABLE [dbo].[xSprinklerType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2324,7 +2394,7 @@ CREATE TABLE [dbo].[xStepTriggerType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2343,7 +2413,7 @@ CREATE TABLE [dbo].[xTallOneStory](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTank]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xTank]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2362,7 +2432,7 @@ CREATE TABLE [dbo].[xTank](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2382,7 +2452,7 @@ CREATE TABLE [dbo].[xTerrainRoughness](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTorsion]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xTorsion]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2401,7 +2471,7 @@ CREATE TABLE [dbo].[xTorsion](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2420,7 +2490,7 @@ CREATE TABLE [dbo].[xTreeExposure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xUnits]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xUnits]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2439,7 +2509,7 @@ CREATE TABLE [dbo].[xUnits](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2458,7 +2528,7 @@ CREATE TABLE [dbo].[xValuablesStorage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2477,7 +2547,7 @@ CREATE TABLE [dbo].[xWallAttachedStructure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2496,7 +2566,7 @@ CREATE TABLE [dbo].[xWindowProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[zNotes]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Table [dbo].[zNotes]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2507,7 +2577,7 @@ CREATE TABLE [dbo].[zNotes](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2570,8 +2640,9 @@ FROM  Conditions Cond LEFT JOIN  dbo.ConditionFinancials condf
 GROUP BY cond.CondID, ISNULL(condf.PerilCode, 0), Cond.Currency, 
 	CASE WHEN Condf.CondID IS NULL THEN 'No' ELSE 'Yes' END
 
+
 GO
-/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2605,8 +2676,9 @@ FROM Accounts acc INNER JOIN Policies pol
 		INNER JOIN LocCond lc
 	ON cond.CondID = lc.CondID and pol.PolID = lc.PolID
 
+
 GO
-/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2668,8 +2740,9 @@ FROM  Accounts acc LEFT JOIN  dbo.AccountFinancials accf
 	ON acc.AccID = accf.AccID
 GROUP BY acc.AccID, ISNULL(PerilCode, 0), Acc.Currency, CASE WHEN accf.AccID IS NULL THEN 'No' ELSE 'Yes' END
 
+
 GO
-/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2733,8 +2806,9 @@ FROM  Locations loc LEFT JOIN LocationFinancials locf
 GROUP BY loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered), loc.Currency, 
 	CASE WHEN locf.LocID IS NULL THEN 'No' ELSE 'Yes' END
 
+
 GO
-/****** Object:  View [dbo].[vLocCond]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vLocCond]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2744,8 +2818,9 @@ AS
 SELECT distinct LocID, CondID, [Priority]
 FROM LocCond
 
+
 GO
-/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2810,8 +2885,9 @@ FROM  Accounts acc INNER JOIN Policies pol
 GROUP BY pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered), Acc.Currency, 
 	CASE WHEN polf.PolID IS NULL THEN 'No' ELSE 'Yes' END
 
+
 GO
-/****** Object:  View [dbo].[vStepFunctions]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  View [dbo].[vStepFunctions]    Script Date: 08/01/2019 15:31:14 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2853,8 +2929,9 @@ FROM  StepFunctions sf INNER JOIN Policies pol
 GROUP BY sf.PolID, sf.StepFunctionName, pol.PerilsCovered, sf.StepNumber, sf.StepTriggerType, 
 	MinimumTIV, ScaleFactor, IsLimitAtDamage
 
+
 GO
-/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_AccountFinancials_AccID] ON [dbo].[AccountFinancials]
 (
 	[AccID] ASC
@@ -2863,7 +2940,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Accounts_AccName]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Accounts_AccName]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_AccName] ON [dbo].[Accounts]
 (
 	[AccName] ASC
@@ -2872,19 +2949,19 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Accounts_Number]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Accounts_Number]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_Number] ON [dbo].[Accounts]
 (
 	[AccNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ConditionFinancials_CondID] ON [dbo].[ConditionFinancials]
 (
 	[CondID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Conditions_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Conditions_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_AccID] ON [dbo].[Conditions]
 (
 	[AccID] ASC
@@ -2893,37 +2970,37 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Conditions_CondName]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Conditions_CondName]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_CondName] ON [dbo].[Conditions]
 (
 	[CondName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiAcc_AccID] ON [dbo].[FlexiAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiLoc_LocID] ON [dbo].[FlexiLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiPol_PolID] ON [dbo].[FlexiPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_LocationFinancials_LocID] ON [dbo].[LocationFinancials]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Locations_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Locations_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_AccID] ON [dbo].[Locations]
 (
 	[AccID] ASC
@@ -2932,7 +3009,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_CountryCode] ON [dbo].[Locations]
 (
 	[CountryCode] ASC
@@ -2941,7 +3018,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_LocName]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Locations_LocName]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocName] ON [dbo].[Locations]
 (
 	[LocName] ASC
@@ -2950,13 +3027,13 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocNumber] ON [dbo].[Locations]
 (
 	[LocNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Policies_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Policies_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_AccID] ON [dbo].[Policies]
 (
 	[AccID] ASC
@@ -2965,19 +3042,19 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_PolNumber] ON [dbo].[Policies]
 (
 	[PolNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_PolicyFinancials_PolID] ON [dbo].[PolicyFinancials]
 (
 	[PolFinID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_PortAcc_AccID] ON [dbo].[PortAcc]
 (
 	[AccID] ASC
@@ -2986,7 +3063,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortName] ON [dbo].[Portfolios]
 (
 	[PortName] ASC
@@ -2995,37 +3072,37 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortNumber] ON [dbo].[Portfolios]
 (
 	[PortNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsAcc_AccID] ON [dbo].[ReinsAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_LocID] ON [dbo].[ReinsLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_ReinsID] ON [dbo].[ReinsLoc]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsPol_PolID] ON [dbo].[ReinsPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsReinstatements_ReinsID] ON [dbo].[ReinsReinstatements]
 (
 	[ReinsID] ASC
@@ -3034,25 +3111,25 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsName] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsNumber] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceScope_ReinsID] ON [dbo].[ReinsuranceScope]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 13/12/2018 14:40:55 ******/
+/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 08/01/2019 15:31:14 ******/
 CREATE NONCLUSTERED INDEX [IX_StepFunctions_PolID] ON [dbo].[StepFunctions]
 (
 	[PolID] ASC
@@ -3522,6 +3599,11 @@ ALTER TABLE [dbo].[FlexiPol]  WITH CHECK ADD  CONSTRAINT [FK_FlexiPol_Policies] 
 REFERENCES [dbo].[Policies] ([PolID])
 GO
 ALTER TABLE [dbo].[FlexiPol] CHECK CONSTRAINT [FK_FlexiPol_Policies]
+GO
+ALTER TABLE [dbo].[LocationDetails]  WITH CHECK ADD  CONSTRAINT [FK_LocationDetails_Locations] FOREIGN KEY([LocID])
+REFERENCES [dbo].[Locations] ([LocID])
+GO
+ALTER TABLE [dbo].[LocationDetails] CHECK CONSTRAINT [FK_LocationDetails_Locations]
 GO
 ALTER TABLE [dbo].[LocationDetails]  WITH CHECK ADD  CONSTRAINT [FK_LocationDetails_xAppurtenantStructure] FOREIGN KEY([AppurtenantStructure])
 REFERENCES [dbo].[xAppurtenantStructure] ([Code])
@@ -4073,6 +4155,16 @@ REFERENCES [dbo].[ReinsuranceInfo] ([ReinsID])
 GO
 ALTER TABLE [dbo].[ReinsPol] CHECK CONSTRAINT [FK_ReinsPol_ReinsuranceInfo]
 GO
+ALTER TABLE [dbo].[ReinsPort]  WITH CHECK ADD  CONSTRAINT [FK_ReinsPort_Portfolios] FOREIGN KEY([PortID])
+REFERENCES [dbo].[Portfolios] ([PortID])
+GO
+ALTER TABLE [dbo].[ReinsPort] CHECK CONSTRAINT [FK_ReinsPort_Portfolios]
+GO
+ALTER TABLE [dbo].[ReinsPort]  WITH CHECK ADD  CONSTRAINT [FK_ReinsPort_ReinsuranceInfo] FOREIGN KEY([ReinsID])
+REFERENCES [dbo].[ReinsuranceInfo] ([ReinsID])
+GO
+ALTER TABLE [dbo].[ReinsPort] CHECK CONSTRAINT [FK_ReinsPort_ReinsuranceInfo]
+GO
 ALTER TABLE [dbo].[ReinsReinstatements]  WITH CHECK ADD  CONSTRAINT [FK_ReinsReinstatements_ReinsReinstatements] FOREIGN KEY([ReinsID])
 REFERENCES [dbo].[ReinsuranceInfo] ([ReinsID])
 GO
@@ -4127,6 +4219,360 @@ ALTER TABLE [dbo].[WorkersComp]  WITH CHECK ADD  CONSTRAINT [FK_WorkersComp_Work
 REFERENCES [dbo].[Locations] ([LocID])
 GO
 ALTER TABLE [dbo].[WorkersComp] CHECK CONSTRAINT [FK_WorkersComp_WorkersComp]
+GO
+/****** Object:  StoredProcedure [dbo].[spCreateAccFile]    Script Date: 08/01/2019 15:31:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Aiste Kalinauskaite
+-- Create date: 2018 12 28
+-- Description:	create Acc file
+-- =============================================
+CREATE PROCEDURE [dbo].[spCreateAccFile]
+	@PortID bigint = Null,
+	@AccID bigint = Null,
+	@PolID bigint = Null
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    --Create temporary table with unique PolIDs and CondID
+	SELECT distinct PolID, CondID
+	INTO #PolCond
+	FROM LocCond
+
+	--create Acc file
+	SELECT port.PortNumber, port.PortName, port.PortNotes, a.AccNumber, a.AccName, a.AccGroup, a.AccStatus, a.ExpiringAccNumber,
+		c.CedantName, a.Currency as AccCurrency, a.AccUserDef1, a.AccUserDef2, a.AccUserDef3, a.AccUserDef4, a.AccUserDef5,
+		--FlexiAccZZZ columns
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = vaf.PerilCode & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as AccPeril,
+		vaf.AccDedCode1Building, vaf.AccDedType1Building, vaf.AccDed1Building, vaf.AccMinDed1Building, vaf.AccMaxDed1Building,
+		vaf.AccDedCode2Other, vaf.AccDedType2Other, vaf.AccDed2Other, vaf.AccMinDed2Other, vaf.AccMaxDed2Other,
+		vaf.AccDedCode3Contents, vaf.AccDedType3Contents, vaf.AccDed3Contents, vaf.AccMinDed3Contents, vaf.AccMaxDed3Contents,
+		vaf.AccDedCode4BI, vaf.AccDedType4BI, vaf.AccDed4BI, vaf.AccMinDed4BI, vaf.AccMaxDed4BI,
+		vaf.AccDedCode5PD, vaf.AccDedType5PD, vaf.AccDed5PD, vaf.AccMinDed5PD, vaf.AccMaxDed5PD,
+		vaf.AccDedCode6All, vaf.AccDedType6All, vaf.AccDed6All, vaf.AccMinDed6All, vaf.AccMaxDed6All,
+		vaf.AccLimitCode1Building, vaf.AccLimitType1Building, vaf.AccLimit1Building,
+		vaf.AccLimitCode2Other, vaf.AccLimitType2Other, vaf.AccLimit2Other,
+		vaf.AccLimitCode3Contents, vaf.AccLimitType3Contents, vaf.AccLimit3Contents,
+		vaf.AccLimitCode4BI, vaf.AccLimitType4BI, vaf.AccLimit4BI,
+		vaf.AccLimitCode5PD, vaf.AccLimitType5PD, vaf.AccLimit5PD,
+		vaf.AccLimitCode6All, vaf.AccLimitType6All, vaf.AccLimit6All,
+		pol.PolNumber, pol.PolStatus, pol.InceptionDate as PolInceptionDate, pol.ExpiryDate as PolExpiryDate,
+		pr.ProducerName, pol.Underwriter, pol.BranchName, lob.LOB, pol.ExpiringPolNumber,
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = pol.PerilsCovered & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as PolPerilsCovered,
+		pol.GrossPremium as PolGrossPremium, pol.Tax as PolTax, pol.Brokerage as PolBrokerage, pol.NetPremium as PolNetPremium,
+		pol.LayerNumber, pol.LayerParticipation, pol.LayerLimit, pol.LayerAttachment, pol.HoursClause, 
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = vpf.PerilCode & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as PolPeril,
+		vpf.PolDedCode1Building, vpf.PolDedType1Building, vpf.PolDed1Building, vpf.PolMinDed1Building, vpf.PolMaxDed1Building,
+		vpf.PolDedCode2Other, vpf.PolDedType2Other, vpf.PolDed2Other, vpf.PolMinDed2Other, vpf.PolMaxDed2Other,
+		vpf.PolDedCode3Contents, vpf.PolDedType3Contents, vpf.PolDed3Contents, vpf.PolMinDed3Contents, vpf.PolMaxDed3Contents,
+		vpf.PolDedCode4BI, vpf.PolDedType4BI, vpf.PolDed4BI, vpf.PolMinDed4BI, vpf.PolMaxDed4BI,
+		vpf.PolDedCode5PD, vpf.PolDedType5PD, vpf.PolDed5PD, vpf.PolMinDed5PD, vpf.PolMaxDed5PD,
+		vpf.PolDedCode6All, vpf.PolDedType6All, vpf.PolDed6All, vpf.PolMinDed6All, vpf.PolMaxDed6All,
+		vpf.PolLimitCode1Building, vpf.PolLimitType1Building, vpf.PolLimit1Building,
+		vpf.PolLimitCode2Other, vpf.PolLimitType2Other, vpf.PolLimit2Other,
+		vpf.PolLimitCode3Contents, vpf.PolLimitType3Contents, vpf.PolLimit3Contents,
+		vpf.PolLimitCode4BI, vpf.PolLimitType4BI, vpf.PolLimit4BI,
+		vpf.PolLimitCode5PD, vpf.PolLimitType5PD, vpf.PolLimit5PD,
+		vpf.PolLimitCode6All, vpf.PolLimitType6All, vpf.PolLimit6All,
+		vsf.StepFunctionName, vsf.StepTriggerType, vsf.StepNumber, 
+		vsf.StartTriggerBuilding, vsf.EndTriggerBuilding, vsf.DeductibleBuilding, vsf.PayoutBuilding,
+		vsf.StartTriggerContent, vsf.EndTriggerContent, vsf.DeductibleContent, vsf.PayoutContent,
+		vsf.StartTriggerBuildingContent, vsf.EndTriggerBuildingContent, vsf.DeductileBuildingContent, vsf.PayoutBuildingContent,
+		vsf.MinimumTIV, vsf.ScaleFactor, vsf.IsLimitAtDamage,
+		pol.PolUserDef1, pol.PolUserDef2, pol.PolUserDef3, pol.PolUserDef4, pol.PolUserDef5,
+		--FlexiPolZZZ columns should go here
+		cond.CondNumber, cond.CondName, 
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = vcf.PerilCode & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as CondPeril,
+		vcf.CondDedCode1Building, vcf.CondDedType1Building, vcf.CondDed1Building, vcf.CondMinDed1Building, vcf.CondMaxDed1Building,
+		vcf.CondDedCode2Other, vcf.CondDedType2Other, vcf.CondDed2Other, vcf.CondMinDed2Other, vcf.CondMaxDed2Other,
+		vcf.CondDedCode3Contents, vcf.CondDedType3Contents, vcf.CondDed3Contents, vcf.CondMinDed3Contents, vcf.CondMaxDed3Contents,
+		vcf.CondDedCode4BI, vcf.CondDedType4BI, vcf.CondDed4BI, vcf.CondMinDed4BI, vcf.CondMaxDed4BI,
+		vcf.CondDedCode5PD, vcf.CondDedType5PD, vcf.CondDed5PD, vcf.CondMinDed5PD, vcf.CondMaxDed5PD,
+		vcf.CondDedCode6All, vcf.CondDedType6All, vcf.CondDed6All, vcf.CondMinDed6All, vcf.CondMaxDed6All,
+		vcf.CondLimitCode1Building, vcf.CondLimitType1Building, vcf.CondLimit1Building,
+		vcf.CondLimitCode2Other, vcf.CondLimitType2Other, vcf.CondLimit2Other,
+		vcf.CondLimitCode3Contents, vcf.CondLimitType3Contents, vcf.CondLimit3Contents,
+		vcf.CondLimitCode4BI, vcf.CondLimitType4BI, vcf.CondLimit4BI,
+		vcf.CondLimitCode5PD, vcf.CondLimitType5PD, vcf.CondLimit5PD,
+		vcf.CondLimitCode6All, vcf.CondLimitType6All, vcf.CondLimit6All
+	FROM Portfolios port INNER JOIN PortAcc pa	
+		ON port.PortID = pa.PortID
+			INNER JOIN Accounts a
+		ON pa.AccID = a.AccID
+			LEFT JOIN Cedants c
+		ON a.CedantID = c.CedantID
+			INNER JOIN vAccountFinancials vaf
+		ON a.AccID = vaf.AccID
+			INNER JOIN Policies pol
+		ON a.AccID = pol.AccID
+			LEFT JOIN Producers pr
+		ON pol.ProducerID = pr.ProducerID
+			LEFT JOIN LOB
+		ON pol.LOBID = lob.LOBID
+			INNER JOIN vPolicyFinancials vpf
+		ON pol.PolID = vpf.PolID
+			LEFT JOIN vStepFunctions vsf
+		ON pol.PolID = vsf.PolID
+			LEFT JOIN #PolCond pc
+		ON pol.PolID = pc.PolID
+			LEFT JOIN Conditions cond
+		ON pc.CondID = cond.CondID
+			LEFT JOIN vConditionFinancials vcf
+		ON cond.CondID = vcf.CondID
+	WHERE (port.PortID = @PortID OR @PortID is NULL) AND (a.AccID = @AccID OR @AccID is NULL) AND (pol.PolID = @PolID OR @PolID is NULL)
+
+	--delete temp table
+	DROP TABLE #PolCond
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[spCreateLocFile]    Script Date: 08/01/2019 15:31:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Aiste Kalinauskaite
+-- Create date: 2018 12 28
+-- Description:	Create Loc File
+-- =============================================
+CREATE PROCEDURE [dbo].[spCreateLocFile] 
+	@PortID bigint = Null,
+	@AccID bigint = Null,
+	@LocID bigint = Null
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	SELECT port.PortNumber, a.AccNumber, loc.LocNumber, loc.LocName, loc.LocGroup, loc.CorrelationGroup, loc.IsPrimary, loc.IsTenant,
+		loc.BuildingID, loc.LocInceptionDate, loc.LocExpiryDate, loc.PercentComplete, loc.CompletionDate, loc.CountryCode,
+		loc.Latitude, loc.Longitude, loc.StreetAddress, loc.PostalCode, loc.City, loc.AreaCode, loc.AreaName, 
+		loc.GeogScheme1, loc.GeogName1, loc.GeogScheme2, loc.GeogName2, loc.GeogScheme3, loc.GeogName3,
+		loc.GeogScheme4, loc.GeogName4, loc.GeogScheme5, loc.GeogName5, loc.AddressMatch, loc.GeocodeQuality, loc.Geocoder,
+		loc.OrgOccupancyScheme, loc.OrgOccupancyCode, loc.OrgConstructionScheme, loc.OrgConstructionCode,
+		loc.OccupancyCode, loc.ConstructionCode, loc.YearBuilt, loc.NumberOfStoreys, loc.NumberOfBuildings,
+		loc.FloorArea, loc.FloorAreaUnit, loc.LocUserDef1, loc.LocUserDef2, loc.LocUserDef3, loc.LocUserDef4, loc.LocUserDef5,
+		--FlexiLocZZZ columns here
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = loc.PerilsCovered & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as LocPerilsCovered,
+		loc.BuildingTIV, loc.OtherTIV, loc.ContentsTIV, loc.BITIV, loc.BIPOI, loc.Currency as LocCurrency,
+		loc.GrossPremium as LocGrossPremium, loc.Tax as LocTax, loc.Brokerage as LocBrokerage, loc.NetPremium as LocNetPremium,
+		loc.NonCatGroundUpLoss, loc.Participation as LocParticipation, loc.PayoutBasis, loc.ReinsTag,
+		cond.CondNumber, lc.[Priority] as CondPriority,
+		vlf.LocDedCode1Building, vlf.LocDedType1Building, vlf.LocDed1Building, vlf.LocMinDed1Building, vlf.LocMaxDed1Building,
+		vlf.LocDedCode2Other, vlf.LocDedType2Other, vlf.LocDed2Other, vlf.LocMinDed2Other, vlf.LocMaxDed2Other,
+		vlf.LocDedCode3Contents, vlf.LocDedType3Contents, vlf.LocDed3Contents, vlf.LocMinDed3Contents, vlf.LocMaxDed3Contents,
+		vlf.LocDedCode4BI, vlf.LocDedType4BI, vlf.LocDed4BI, vlf.LocMinDed4BI, vlf.LocMaxDed4BI,
+		vlf.LocDedCode5PD, vlf.LocDedType5PD, vlf.LocDed5PD, vlf.LocMinDed5PD, vlf.LocMaxDed5PD,
+		vlf.LocDedCode6All, vlf.LocDedType6All, vlf.LocDed6All, vlf.LocMinDed6All, vlf.LocMaxDed6All,
+		vlf.LocLimitCode1Building, vlf.LocLimitType1Building, vlf.LocLimit1Building,
+		vlf.LocLimitCode2Other, vlf.LocLimitType2Other, vlf.LocLimit2Other,
+		vlf.LocLimitCode3Contents, vlf.LocLimitType3Contents, vlf.LocLimit3Contents,
+		vlf.LocLimitCode4BI, vlf.LocLimitType4BI, vlf.LocLimit4BI,
+		vlf.LocLimitCode5PD, vlf.LocLimitType5PD, vlf.LocLimit5PD,
+		vlf.LocLimitCode6All, vlf.LocLimitType6All, vlf.LocLimit6All, vlf.BIWaitingPeriod,
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = vlf.PerilCode & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as LocPeril,
+		ld.YearUpgraded, ld.SurgeLeakage, ld.SprinklerType, ld.PercentSprinklered, ld.RoofCover, ld.RoofYearBuilt,
+		ld.RoofGeometry, ld.RoofEquipment, ld.RoofFrame, ld.RoofMaintenance, ld.BuildingCondition, ld.RoofAttachedStructures,
+		ld.RoofDeck, ld.RoofPitch, ld.RoofAnchorage, ld.RoofDeckAttachment, ld.RoofCoverAttachment, ld.GlassType,
+		ld.LatticeType, ld.FloodZone, ld.SoftStory, ld.Basement, ld.BasementLevelCount, ld.WindowProtection,
+		ld.FoundationType, ld.WallAttachedStructure, ld.AppurtenantStructure, ld.ConstructionQuality,
+		ld.GroundEquipment, ld.EquipmentBracing, ld.Flashing, ld.BuildingShape, ld.ShapeIrregularity, ld.Pounding,
+		ld.Ornamentation, ld.SpecialEQConstruction, ld.Retrofit, ld.CrippleWall, ld.FoundationConnection, 
+		ld.ShortColumn, ld.Fatigue, ld.Cladding, ld.BIPreparedness, ld.BIRedundancy, ld.FirstFloorHeight, ld.FirstFloorHeightUnit,
+		ld.Datum, ld.GroundElevation, ld.GroundElevationUnit, ld.Tank, ld.Redundancy, ld.InternalPartition, ld.ExternalDoors,
+		ld.Torsion, ld.MechanicalEquipmentSide, ld.ContentsWindVuln, ld.ContentsFloodVuln, ld.ContentsQuakeVuln,
+		ld.SmallDebris, ld.FloorsOccupied, ld.FloodDefenseHeight, ld.FloodDefenseHeightUnit, ld.FloodDebrisResilience,
+		ld.BaseFloodElevation, ld.BaseFloodElevationUnit, ld.BuildingHeight, ld.BuildingHeightUnit, ld.BuildingValuation,
+		ld.TreeExposure, ld.Chimney, ld.BuildingType, ld.Packaging, ld.Protection, ld.SalvageProtection, ld.ValuablesStorage,
+		ld.DaysHeld, ld.BrickVeneer, ld.FEMACompliance, ld.CustomFloodSOP, ld.CustomFloodZone, ld.MultiStoryHall,
+		ld.BuildingExteriorOpening, ld.ServiceEquipmentProtection, ld.TallOneStory, ld.TerrainRoughness,
+		wc.NumberOfEmployees, wc.Payroll
+	FROM Portfolios port INNER JOIN PortAcc pa	
+		ON port.PortID = pa.PortID
+			INNER JOIN Accounts a
+		ON pa.AccID = a.AccID
+			INNER JOIN Locations loc
+		ON a.AccID = loc.AccID
+			LEFT JOIN LocCond lc
+		ON loc.LocID = lc.LocID
+			LEFT JOIN Conditions cond
+		ON lc.CondID = cond.CondID
+			LEFT JOIN vLocationFinancials vlf
+		ON loc.LocID = vlf.LocID
+			LEFT JOIN LocationDetails ld
+		ON loc.LocID = ld.LocID
+			LEFT JOIN WorkersComp wc
+		ON loc.LocID = wc.LocID
+	WHERE (port.PortID = @PortID OR @PortID is Null) AND (a.AccID = @AccID OR @AccID is NULL) AND (loc.LocID = @LocID OR @LocID is NULL)
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[spCreateReinsFiles]    Script Date: 08/01/2019 15:31:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Aiste Kalinauskaite
+-- Create date: 2018 12 28
+-- Description:	Create Reinsurance file
+-- =============================================
+CREATE PROCEDURE [dbo].[spCreateReinsFiles]
+	@PortID bigint = Null,
+	@AccID bigint = Null,
+	@PolID bigint = NUll,
+	@LocID bigint = Null
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	CREATE TABLE #Reinsurance (	
+		[PortID] bigint NOT NULL,
+		[ReinsID] bigint NOT NULL,
+		[AccID] bigint NOT NULL,
+		[PolID] bigint NULL,
+		[LocID] bigint NULL
+	)
+
+	INSERT INTO #Reinsurance (PortID, ReinsID, AccID)
+	SELECT distinct port.PortID, ra.ReinsID, ra.AccID
+	FROM ReinsAcc ra INNER JOIN Accounts a
+		ON ra.AccID = a.AccID
+			INNER JOIN PortAcc pa
+		ON pa.AccID = a.AccID
+			INNER JOIN Portfolios port
+		ON port.PortID = pa.PortID
+	WHERE (port.PortID = @PortID OR @PortID is NULL) AND (a.AccID = @AccID OR @AccID is NULL)
+
+	INSERT INTO #Reinsurance (PortID, ReinsID, AccID, PolID)
+	SELECT distinct port.PortID, rp.ReinsID, a.AccID, rp.PolID
+	FROM ReinsPol rp INNER JOIN Policies pol
+		ON rp.PolID = pol.PolID
+			INNER JOIN Accounts a
+		ON pol.AccID = a.AccID
+			INNER JOIN PortAcc pa
+		ON pa.AccID = a.AccID
+			INNER JOIN Portfolios port
+		ON port.PortID = pa.PortID
+	WHERE (port.PortID = @PortID OR @PortID is NULL) AND (a.AccID = @AccID OR @AccID is NULL) AND (pol.PolID = @PolID OR @PolID is NULL)
+
+	INSERT INTO #Reinsurance (PortID, ReinsID, AccID, LocID)
+	SELECT distinct port.PortID, rl.ReinsID, a.AccID, rl.LocID
+	FROM ReinsLoc rl INNER JOIN Locations loc
+		ON loc.LocID = rl.LocID
+			INNER JOIN Accounts a
+		ON loc.AccID = a.AccID
+			INNER JOIN PortAcc pa
+		ON pa.AccID = a.AccID
+			INNER JOIN Portfolios port
+		ON port.PortID = pa.PortID
+	WHERE (port.PortID = @PortID OR @PortID is NULL) AND (a.AccID = @AccID OR @AccID is NULL) AND (loc.LocID = @LocID OR @LocID is NULL)
+
+	 SELECT distinct ri.ReinsNumber, ri.ReinsName, ri.ReinsLayerNumber, 
+		STUFF((SELECT N';' + Abbreviation FROM xPerilCodes xpc WHERE xpc.PerilCode = PerilCode & xpc.PerilCode 
+			ORDER BY PerilCode FOR XML PATH(N'')), 1, 1, N'') as ReinsPeril,
+		ri.ReinsInceptionDate, ri.ReinsExpiryDate, ri.CededPercent, ri.RiskLimit, ri.RiskAttachment, 
+		ri.OccLimit, ri.OccAttachment, ri.OccFranchiseDed, ri.OccReverseFranchise, ri.AggLimit, ri.AggAttachment, ri.AggPeriod,
+		ri.PlacedPercent, ri.Currency as ReinsCurrency, ri.InuringPriority, ri.ReinsType, ri.AttachmentBasis,
+		ri.Reinstatement, ri.ReinstatementCharge, ri.ReinsPremium, ri.DeemedPercentPlaced, ri.ReinsFXrate, ri.TreatyShare,
+		ri.UseReinsDates
+	FROM ReinsuranceInfo ri INNER JOIN #Reinsurance rei
+		ON ri.ReinsID = rei.ReinsID
+
+	SELECT distinct ri.ReinsNumber, rs.PortNumber, rs.AccNumber, rs.PolNumber, rs.LocGroup, rs.LocNumber, rs.CedantName,
+		rs.ProducerName, rs.LOB, rs.CountryCode, rs.ReinsTag, rs.CededPercent, rs.RiskLevel
+	FROM ReinsuranceScope rs INNER JOIN ReinsuranceInfo ri
+		ON rs.ReinsID = ri.ReinsID
+			INNER JOIN #Reinsurance rei
+		ON ri.ReinsID = rei.ReinsID
+
+	DROP TABLE #Reinsurance
+
+END
+
+GO
+/****** Object:  StoredProcedure [dbo].[spGetFlexiAccPivotDOESNOTWORK]    Script Date: 08/01/2019 15:31:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- =============================================
+-- Author:		Aiste Kalinauskaite
+-- Create date: 2018 12 27
+-- Description:	Extract FlexiAcc items in a pivot
+CREATE PROCEDURE [dbo].[spGetFlexiAccPivotDOESNOTWORK] (
+	@PortID_list nvarchar(40)
+	)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	PRINT 'abc'
+
+	DECLARE @DynamicPivotQuery AS NVARCHAR(MAX)
+	DECLARE @ColumnName AS NVARCHAR(2000)
+ 
+	--Prepare the PIVOT query using the dynamic SQL
+	SET @DynamicPivotQuery = 
+	
+	--Get distinct values of ModifierName for the PIVOT Column 
+	  N'SELECT @ColumnName = ISNULL(@ColumnName + '','','''') + QUOTENAME(ModifierName)
+		FROM 
+		(SELECT DISTINCT fa.ModifierName
+		FROM FlexiAcc fa INNER JOIN Accounts a
+			ON fa.AccID = a.AccID
+				INNER JOIN PortAcc pa
+			ON pa.AccID = a.AccID
+				INNER JOIN Portfolios port
+			ON pa.PortID = port.PortID
+		WHERE port.PortID in (' +@PortID_list+ ')) AS parameter
+	  
+	  SELECT port.PortID, piv.AccID, ' +@ColumnName+ ' 
+		FROM
+		(SELECT AccID   
+		FROM FlexiAcc) AS SourceTable
+		PIVOT
+		(
+		MAX(ModifierValue)
+		FOR ModifierName IN (' + @ColumnName + ')
+		) AS piv INNER JOIN Accounts a
+			ON fa.AccID = a.AccID
+				INNER JOIN PortAcc pa
+			ON pa.AccID = a.AccID
+				INNER JOIN Portfolios port
+			ON pa.PortID = port.PortID
+		WHERE port.PortID in (' +@PortID_list+ ')) 
+		ORDER BY port.PortID, piv.AccID
+		'   
+	--Execute the Dynamic Pivot Query
+--	EXEC sp_executesql @DynamicPivotQuery
+
+print (@DynamicPivotQuery)
+END
+
+
+
+
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
 Begin DesignProperties = 
@@ -4241,5 +4687,5 @@ EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0
 GO
 USE [master]
 GO
-ALTER DATABASE [OED_v1.0.1] SET  READ_WRITE 
+ALTER DATABASE [OED] SET  READ_WRITE 
 GO
