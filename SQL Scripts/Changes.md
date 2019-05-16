@@ -1,9 +1,7 @@
 # Changes to OED DB
 
-## OED v1.0.2:
+## OED v1.0.3:
 
-•	New tables:
+•	Corrections to some occupancy descriptions
 
-  o	ReinsPort – a table to store portfolio IDs and how they link to reinsurance contracts.
-
-•	Missing foreign key added in the scripts.
+•	Original occupancy and construction code data types changed to text (varchar(100))
