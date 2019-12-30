@@ -4836,6 +4836,8 @@ INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (1, N'% of
 GO
 INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (2, N'% of TIV', N'Values <= 1 only')
 GO
+INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (3, N'% of Limit', N'Values <= 1 only; used for step policies only in PayoutType field')
+GO
 INSERT [dbo].[xMechanicalEquipmentSide] ([Code], [CodeDescription]) VALUES (0, N'Unknown')
 GO
 INSERT [dbo].[xMechanicalEquipmentSide] ([Code], [CodeDescription]) VALUES (1, N'Vulnerable')
@@ -4864,7 +4866,7 @@ INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [Cod
 GO
 INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1055, N'Residential, Apartment/Condo', N'Attached, multi-unit housing usually occupied by one family per unit.', N'1050 - 1099', N'Residential', N'306')
 GO
-INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1056, N'Residential, Terraced Housing', N'Attached residential unit. Commonly found in Europe, e.g., United Kingdom.', N'1050 - 1099', N'Residential', N'307')
+INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1056, N'Residential, Terraced Housing', N'Attached residential unit. Also referred to as townhouses, row houses, row homes, or brownstones. Usually more than one story and built close to the street.', N'1050 - 1099', N'Residential', N'307')
 GO
 INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1100, N'Commercial, General commercial', N'General Commercial is a composite of all other Commercial Occupancies. You can select this occupancy class code if you have no specific information about the risk.', N'1100 - 1149', N'Commercial', N'311')
 GO
