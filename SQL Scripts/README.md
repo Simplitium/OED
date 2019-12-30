@@ -1,6 +1,6 @@
 # SQL Scripts
 
-There are 3 script files to create OED DB and populate respective reference tables. They all should be run in the order they are numbered. The size of the database created is around 4GB.
+There are 3 script files to create OED DB and populate respective reference tables. They all should be run in the order they are numbered. The size of the database created is around 4GB. Script "3. Populate xPerilLookup.sql" contributes to the database size the most (~95%). This is reference data and if not needed, the last script can be not run.
 
 ## 1. Create DB and tables:
 •	If you want a different name for the DB, replace all instances of [OED] with the name that you want (there are quite a few instances in the entire script).
