@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [OED]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Database [OED]    Script Date: 30/12/2019 10:18:20 ******/
 CREATE DATABASE [OED]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -77,7 +77,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'OED', N'ON'
 GO
 USE [OED]
 GO
-/****** Object:  UserDefinedFunction [dbo].[BinaryToDecimal]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  UserDefinedFunction [dbo].[BinaryToDecimal]    Script Date: 30/12/2019 10:18:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,7 +105,7 @@ BEGIN
 END
 
 GO
-/****** Object:  UserDefinedFunction [dbo].[DecimalToBinary]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  UserDefinedFunction [dbo].[DecimalToBinary]    Script Date: 30/12/2019 10:18:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,7 +132,7 @@ BEGIN
 END
 
 GO
-/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 30/12/2019 10:18:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -158,7 +158,7 @@ CREATE TABLE [dbo].[AccountFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Accounts]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Accounts]    Script Date: 30/12/2019 10:18:20 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -188,7 +188,7 @@ CREATE TABLE [dbo].[Accounts](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Cedants]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Cedants]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -207,7 +207,7 @@ CREATE TABLE [dbo].[Cedants](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +233,7 @@ CREATE TABLE [dbo].[ConditionFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Conditions]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Conditions]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -256,7 +256,7 @@ CREATE TABLE [dbo].[Conditions](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,7 +277,7 @@ CREATE TABLE [dbo].[FlexiAcc](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -298,7 +298,7 @@ CREATE TABLE [dbo].[FlexiLoc](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[FlexiPol]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[FlexiPol]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -319,7 +319,7 @@ CREATE TABLE [dbo].[FlexiPol](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LOB]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[LOB]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -338,7 +338,7 @@ CREATE TABLE [dbo].[LOB](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocationDetails]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[LocationDetails]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -441,7 +441,7 @@ CREATE TABLE [dbo].[LocationDetails](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -468,7 +468,7 @@ CREATE TABLE [dbo].[LocationFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Locations]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Locations]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -550,7 +550,7 @@ CREATE TABLE [dbo].[Locations](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[LocCond]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[LocCond]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -568,7 +568,7 @@ CREATE TABLE [dbo].[LocCond](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[LocPol]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[LocPol]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -585,7 +585,7 @@ CREATE TABLE [dbo].[LocPol](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Policies]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Policies]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -629,7 +629,7 @@ CREATE TABLE [dbo].[Policies](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -655,7 +655,7 @@ CREATE TABLE [dbo].[PolicyFinancials](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PortAcc]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[PortAcc]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -671,7 +671,7 @@ CREATE TABLE [dbo].[PortAcc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Portfolios]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Portfolios]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -694,7 +694,7 @@ CREATE TABLE [dbo].[Portfolios](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Producers]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Producers]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -713,7 +713,7 @@ CREATE TABLE [dbo].[Producers](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -730,7 +730,7 @@ CREATE TABLE [dbo].[ReinsAcc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -749,7 +749,7 @@ CREATE TABLE [dbo].[ReinsLoc](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsPol]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsPol]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -766,7 +766,7 @@ CREATE TABLE [dbo].[ReinsPol](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsPort]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsPort]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -783,7 +783,7 @@ CREATE TABLE [dbo].[ReinsPort](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -800,7 +800,7 @@ CREATE TABLE [dbo].[ReinsReinstatements](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -846,7 +846,7 @@ CREATE TABLE [dbo].[ReinsuranceInfo](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -877,7 +877,7 @@ CREATE TABLE [dbo].[ReinsuranceScope](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[StepFunctions]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[StepFunctions]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -889,15 +889,7 @@ CREATE TABLE [dbo].[StepFunctions](
 	[PolID] [bigint] NOT NULL,
 	[StepFunctionName] [varchar](30) NOT NULL,
 	[StepTriggerType] [tinyint] NOT NULL,
-	[StepNumber] [tinyint] NOT NULL,
-	[StepTriggerCov] [tinyint] NOT NULL,
-	[StartTrigger] [float] NOT NULL,
-	[EndTrigger] [float] NOT NULL,
-	[Deductible] [float] NOT NULL,
-	[Payout] [float] NOT NULL,
-	[MinimumTIV] [float] NOT NULL,
-	[ScaleFactor] [float] NOT NULL,
-	[IsLimitAtDamage] [float] NOT NULL,
+	[PerilCode] [int] NOT NULL,
  CONSTRAINT [PK_StepFunctions] PRIMARY KEY CLUSTERED 
 (
 	[StepFuncID] ASC
@@ -907,7 +899,38 @@ CREATE TABLE [dbo].[StepFunctions](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[WorkersComp]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[Steps]    Script Date: 30/12/2019 10:18:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Steps](
+	[StepID] [bigint] IDENTITY(1,1) NOT NULL,
+	[StepFuncID] [bigint] NOT NULL,
+	[StepNumber] [tinyint] NOT NULL,
+	[PayoutType] [tinyint] NOT NULL,
+	[TriggerType] [tinyint] NOT NULL,
+	[StepTriggerCov] [tinyint] NOT NULL,
+	[TriggerStart] [float] NOT NULL,
+	[TriggerEnd] [float] NOT NULL,
+	[PayoutStart] [float] NOT NULL,
+	[PayoutEnd] [float] NOT NULL,
+	[Deductible] [float] NOT NULL,
+	[PayoutLimit] [float] NOT NULL,
+	[ExtraExpenseFactor] [float] NOT NULL,
+	[ExtraExpenseLimit] [float] NOT NULL,
+	[DebrisRemovalFactor] [float] NOT NULL,
+	[MinimumTIV] [float] NOT NULL,
+	[ScaleFactor] [float] NOT NULL,
+	[IsLimitAtDamage] [float] NOT NULL,
+ CONSTRAINT [PK_Steps] PRIMARY KEY CLUSTERED 
+(
+	[StepID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[WorkersComp]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -924,7 +947,7 @@ CREATE TABLE [dbo].[WorkersComp](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -943,7 +966,7 @@ CREATE TABLE [dbo].[xAddressMatch](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -962,7 +985,7 @@ CREATE TABLE [dbo].[xAppurtenantStructure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAreaCode]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xAreaCode]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -984,7 +1007,7 @@ CREATE TABLE [dbo].[xAreaCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1003,7 +1026,7 @@ CREATE TABLE [dbo].[xAttachmentBasis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBasement]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBasement]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1022,7 +1045,7 @@ CREATE TABLE [dbo].[xBasement](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1041,7 +1064,7 @@ CREATE TABLE [dbo].[xBIPreparedness](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1060,7 +1083,7 @@ CREATE TABLE [dbo].[xBIRedundancy](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1079,7 +1102,7 @@ CREATE TABLE [dbo].[xBrickVeneer](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1098,7 +1121,7 @@ CREATE TABLE [dbo].[xBuildingCondition](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1117,7 +1140,7 @@ CREATE TABLE [dbo].[xBuildingExteriorOpening](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1136,7 +1159,7 @@ CREATE TABLE [dbo].[xBuildingShape](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xBuildingType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xBuildingType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1155,7 +1178,7 @@ CREATE TABLE [dbo].[xBuildingType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xChimney]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xChimney]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1174,7 +1197,7 @@ CREATE TABLE [dbo].[xChimney](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCladding]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCladding]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1193,7 +1216,7 @@ CREATE TABLE [dbo].[xCladding](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xConstruction]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xConstruction]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1216,7 +1239,7 @@ CREATE TABLE [dbo].[xConstruction](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1236,7 +1259,7 @@ CREATE TABLE [dbo].[xConstructionQuality](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1256,7 +1279,7 @@ CREATE TABLE [dbo].[xContentsFloodVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1276,7 +1299,7 @@ CREATE TABLE [dbo].[xContentsQuakeVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1296,7 +1319,7 @@ CREATE TABLE [dbo].[xContentsWindVuln](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCountryCodeComments]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCountryCodeComments]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1312,7 +1335,7 @@ CREATE TABLE [dbo].[xCountryCodeComments](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1333,7 +1356,7 @@ CREATE TABLE [dbo].[xCountryCodes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCoverages]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCoverages]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1353,7 +1376,7 @@ CREATE TABLE [dbo].[xCoverages](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1372,7 +1395,7 @@ CREATE TABLE [dbo].[xCrippleWall](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xCurrency]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xCurrency]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1396,7 +1419,7 @@ CREATE TABLE [dbo].[xCurrency](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xDedCode]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xDedCode]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1416,7 +1439,7 @@ CREATE TABLE [dbo].[xDedCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xDedType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xDedType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1436,7 +1459,7 @@ CREATE TABLE [dbo].[xDedType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xEQ]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xEQ]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1446,7 +1469,7 @@ CREATE TABLE [dbo].[xEQ](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1465,7 +1488,7 @@ CREATE TABLE [dbo].[xEquipmentBracing](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1484,7 +1507,7 @@ CREATE TABLE [dbo].[xExternalDoors](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFatigue]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFatigue]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1503,7 +1526,7 @@ CREATE TABLE [dbo].[xFatigue](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1522,7 +1545,7 @@ CREATE TABLE [dbo].[xFEMACompliance](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFlashing]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFlashing]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1541,7 +1564,7 @@ CREATE TABLE [dbo].[xFlashing](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1560,7 +1583,7 @@ CREATE TABLE [dbo].[xFloodDebrisResilience](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1579,7 +1602,7 @@ CREATE TABLE [dbo].[xFoundationConnection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFoundationType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFoundationType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1598,7 +1621,7 @@ CREATE TABLE [dbo].[xFoundationType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xFXRates]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xFXRates]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1616,7 +1639,7 @@ CREATE TABLE [dbo].[xFXRates](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1632,7 +1655,7 @@ CREATE TABLE [dbo].[xGeogScheme](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[xGlassType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xGlassType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1651,7 +1674,7 @@ CREATE TABLE [dbo].[xGlassType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1670,7 +1693,7 @@ CREATE TABLE [dbo].[xGroundEquipment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1689,7 +1712,7 @@ CREATE TABLE [dbo].[xInternalPartition](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLatticeType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xLatticeType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1708,7 +1731,7 @@ CREATE TABLE [dbo].[xLatticeType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLimitCode]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xLimitCode]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1727,7 +1750,7 @@ CREATE TABLE [dbo].[xLimitCode](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xLimitType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xLimitType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1747,7 +1770,7 @@ CREATE TABLE [dbo].[xLimitType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1766,7 +1789,7 @@ CREATE TABLE [dbo].[xMechanicalEquipmentSide](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1785,7 +1808,7 @@ CREATE TABLE [dbo].[xMultiStoryHall](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xOccupancy]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xOccupancy]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1808,7 +1831,7 @@ CREATE TABLE [dbo].[xOccupancy](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1827,7 +1850,7 @@ CREATE TABLE [dbo].[xOrnamentation](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPackaging]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xPackaging]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1846,7 +1869,7 @@ CREATE TABLE [dbo].[xPackaging](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1866,7 +1889,7 @@ CREATE TABLE [dbo].[xPayoutBasis](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1910,7 +1933,7 @@ CREATE TABLE [dbo].[xPerilCodeLookup](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1931,7 +1954,7 @@ CREATE TABLE [dbo].[xPerilCodes](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xPounding]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xPounding]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1950,7 +1973,7 @@ CREATE TABLE [dbo].[xPounding](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xProtection]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xProtection]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1969,7 +1992,7 @@ CREATE TABLE [dbo].[xProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRedundancy]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRedundancy]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1988,7 +2011,7 @@ CREATE TABLE [dbo].[xRedundancy](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xReinsType]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xReinsType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2007,7 +2030,7 @@ CREATE TABLE [dbo].[xReinsType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRetrofit]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRetrofit]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2026,7 +2049,7 @@ CREATE TABLE [dbo].[xRetrofit](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2046,7 +2069,7 @@ CREATE TABLE [dbo].[xRiskLevel](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2065,7 +2088,7 @@ CREATE TABLE [dbo].[xRoofAnchorage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2084,7 +2107,7 @@ CREATE TABLE [dbo].[xRoofAttachedStructures](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofCover]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofCover]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2103,7 +2126,7 @@ CREATE TABLE [dbo].[xRoofCover](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2122,7 +2145,7 @@ CREATE TABLE [dbo].[xRoofCoverAttachment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2141,7 +2164,7 @@ CREATE TABLE [dbo].[xRoofDeck](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2160,7 +2183,7 @@ CREATE TABLE [dbo].[xRoofDeckAttachment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2179,7 +2202,7 @@ CREATE TABLE [dbo].[xRoofEquipment](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2198,7 +2221,7 @@ CREATE TABLE [dbo].[xRoofFrame](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2217,7 +2240,7 @@ CREATE TABLE [dbo].[xRoofGeometry](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2236,7 +2259,7 @@ CREATE TABLE [dbo].[xRoofMaintenance](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2255,7 +2278,7 @@ CREATE TABLE [dbo].[xRoofPitch](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2274,7 +2297,7 @@ CREATE TABLE [dbo].[xSalvageProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2293,7 +2316,7 @@ CREATE TABLE [dbo].[xServiceEquipmentProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2313,7 +2336,7 @@ CREATE TABLE [dbo].[xShapeIrregularity](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xShortColumn]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xShortColumn]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2332,7 +2355,7 @@ CREATE TABLE [dbo].[xShortColumn](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2351,7 +2374,7 @@ CREATE TABLE [dbo].[xSmallDebris](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSoftStory]    Script Date: 23/10/2019 15:13:34 ******/
+/****** Object:  Table [dbo].[xSoftStory]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2370,7 +2393,7 @@ CREATE TABLE [dbo].[xSoftStory](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2389,7 +2412,7 @@ CREATE TABLE [dbo].[xSpecialEQConstruction](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2408,7 +2431,7 @@ CREATE TABLE [dbo].[xSprinklerType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xStatuses]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xStatuses]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2423,7 +2446,7 @@ CREATE TABLE [dbo].[xStatuses](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2442,7 +2465,7 @@ CREATE TABLE [dbo].[xStepTriggerType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2461,7 +2484,7 @@ CREATE TABLE [dbo].[xTallOneStory](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTank]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xTank]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2480,7 +2503,7 @@ CREATE TABLE [dbo].[xTank](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2500,7 +2523,7 @@ CREATE TABLE [dbo].[xTerrainRoughness](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTorsion]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xTorsion]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2519,7 +2542,7 @@ CREATE TABLE [dbo].[xTorsion](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2538,7 +2561,7 @@ CREATE TABLE [dbo].[xTreeExposure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xUnits]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xUnits]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2557,7 +2580,7 @@ CREATE TABLE [dbo].[xUnits](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2576,7 +2599,7 @@ CREATE TABLE [dbo].[xValuablesStorage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2595,7 +2618,7 @@ CREATE TABLE [dbo].[xWallAttachedStructure](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2614,7 +2637,7 @@ CREATE TABLE [dbo].[xWindowProtection](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[zNotes]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Table [dbo].[zNotes]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2625,7 +2648,7 @@ CREATE TABLE [dbo].[zNotes](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2691,7 +2714,7 @@ GROUP BY cond.CondID, ISNULL(condf.PerilCode, 0), Cond.Currency,
 
 
 GO
-/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2728,7 +2751,7 @@ FROM Accounts acc INNER JOIN Policies pol
 
 
 GO
-/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2793,7 +2816,7 @@ GROUP BY acc.AccID, ISNULL(PerilCode, 0), Acc.Currency, CASE WHEN accf.AccID IS 
 
 
 GO
-/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2860,7 +2883,7 @@ GROUP BY loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered), loc.Currency,
 
 
 GO
-/****** Object:  View [dbo].[vLocCond]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vLocCond]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2875,7 +2898,7 @@ FROM LocCond
 
 
 GO
-/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2943,7 +2966,7 @@ GROUP BY pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered), Acc.Cu
 
 
 GO
-/****** Object:  View [dbo].[vStepFunctions]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  View [dbo].[vStepFunctions]    Script Date: 30/12/2019 10:18:21 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2952,43 +2975,58 @@ GO
 
 
 
+
 CREATE VIEW [dbo].[vStepFunctions]
 AS
-SELECT        sf.PolID, sf.StepFunctionName, pol.PerilsCovered, sf.StepNumber, sf.StepTriggerType,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 1 AND StepTriggerType in (1, 3, 4, 5) THEN StartTrigger ELSE 0 END), 0) 
-		AS StartTriggerBuilding, 
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 1 AND StepTriggerType in (1, 3, 4, 5) THEN EndTrigger ELSE 0 END), 0) 
-		AS EndTriggerBuilding, 
-    ISNULL(SUM(CASE WHEN StepTriggerCov = 1 AND StepTriggerType in (1, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
+SELECT        sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerBuildingStart, 
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerBuildingEnd, 
+    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
 		AS DeductibleBuilding,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 1 AND StepTriggerType in (1, 3, 4, 5) THEN Payout ELSE 0 END), 0) 
-		AS PayoutBuilding,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 3 AND StepTriggerType in (2, 3, 4, 5) THEN StartTrigger ELSE 0 END), 0) 
-		AS StartTriggerContent, 
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 3 AND StepTriggerType in (2, 3, 4, 5) THEN EndTrigger ELSE 0 END), 0) 
-		AS EndTriggerContent, 
-    ISNULL(SUM(CASE WHEN StepTriggerCov = 3 AND StepTriggerType in (2, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
-		AS DeductibleContent,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 3 AND StepTriggerType in (2, 3, 4, 5) THEN Payout ELSE 0 END), 0) 
-		AS PayoutContent,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 5 AND StepTriggerType = 3 THEN StartTrigger ELSE 0 END), 0) 
-		AS StartTriggerBuildingContent,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 5 AND StepTriggerType = 3 THEN EndTrigger ELSE 0 END), 0) 
-		AS EndTriggerBuildingContent,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 5 AND StepTriggerType = 3 THEN Deductible ELSE 0 END), 0) 
-		AS DeductileBuildingContent,
-	ISNULL(SUM(CASE WHEN StepTriggerCov = 5 AND StepTriggerType = 3 THEN Payout ELSE 0 END), 0) 
-		AS PayoutBuildingContent,
-	MinimumTIV, ScaleFactor, IsLimitAtDamage
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayoutBuildingStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayoutBuildingEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitBuilding,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerContentsStart, 
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerContentsEnd, 
+    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
+		AS DeductibleContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayOutContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayOutContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerBuildingContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerBuildingContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN Deductible ELSE 0 END), 0) 
+		AS DeductibleBuildingContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayOutBuildingContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayOutBuildingContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitBuildingContents,
+	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
 FROM  StepFunctions sf INNER JOIN Policies pol
-	ON sf.PolID = pol.PolID
-GROUP BY sf.PolID, sf.StepFunctionName, pol.PerilsCovered, sf.StepNumber, sf.StepTriggerType, 
-	MinimumTIV, ScaleFactor, IsLimitAtDamage
+	ON sf.PolID = pol.PolID INNER JOIN Steps s
+	ON sf.StepFuncID = s.StepFuncID
+GROUP BY sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
+	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
+
 
 
 
 GO
-/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_AccountFinancials_AccID] ON [dbo].[AccountFinancials]
 (
 	[AccID] ASC
@@ -2997,7 +3035,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Accounts_AccName]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Accounts_AccName]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_AccName] ON [dbo].[Accounts]
 (
 	[AccName] ASC
@@ -3006,19 +3044,19 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Accounts_Number]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Accounts_Number]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_Number] ON [dbo].[Accounts]
 (
 	[AccNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ConditionFinancials_CondID] ON [dbo].[ConditionFinancials]
 (
 	[CondID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Conditions_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Conditions_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_AccID] ON [dbo].[Conditions]
 (
 	[AccID] ASC
@@ -3027,37 +3065,37 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Conditions_CondName]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Conditions_CondName]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_CondName] ON [dbo].[Conditions]
 (
 	[CondName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiAcc_AccID] ON [dbo].[FlexiAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiLoc_LocID] ON [dbo].[FlexiLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiPol_PolID] ON [dbo].[FlexiPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_LocationFinancials_LocID] ON [dbo].[LocationFinancials]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Locations_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Locations_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_AccID] ON [dbo].[Locations]
 (
 	[AccID] ASC
@@ -3066,7 +3104,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_CountryCode] ON [dbo].[Locations]
 (
 	[CountryCode] ASC
@@ -3075,7 +3113,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_LocName]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Locations_LocName]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocName] ON [dbo].[Locations]
 (
 	[LocName] ASC
@@ -3084,13 +3122,13 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocNumber] ON [dbo].[Locations]
 (
 	[LocNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Policies_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Policies_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_AccID] ON [dbo].[Policies]
 (
 	[AccID] ASC
@@ -3099,19 +3137,19 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_PolNumber] ON [dbo].[Policies]
 (
 	[PolNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_PolicyFinancials_PolID] ON [dbo].[PolicyFinancials]
 (
 	[PolFinID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_PortAcc_AccID] ON [dbo].[PortAcc]
 (
 	[AccID] ASC
@@ -3120,7 +3158,7 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortName] ON [dbo].[Portfolios]
 (
 	[PortName] ASC
@@ -3129,37 +3167,37 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortNumber] ON [dbo].[Portfolios]
 (
 	[PortNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsAcc_AccID] ON [dbo].[ReinsAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_LocID] ON [dbo].[ReinsLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_ReinsID] ON [dbo].[ReinsLoc]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsPol_PolID] ON [dbo].[ReinsPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsReinstatements_ReinsID] ON [dbo].[ReinsReinstatements]
 (
 	[ReinsID] ASC
@@ -3168,25 +3206,25 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsName] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsNumber] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceScope_ReinsID] ON [dbo].[ReinsuranceScope]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 23/10/2019 15:13:35 ******/
+/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 30/12/2019 10:18:21 ******/
 CREATE NONCLUSTERED INDEX [IX_StepFunctions_PolID] ON [dbo].[StepFunctions]
 (
 	[PolID] ASC
@@ -3526,21 +3564,31 @@ ALTER TABLE [dbo].[ReinsuranceInfo] ADD  CONSTRAINT [DF_ReinsuranceInfo_TreatySh
 GO
 ALTER TABLE [dbo].[ReinsuranceInfo] ADD  CONSTRAINT [DF_ReinsuranceInfo_UseReinsDates]  DEFAULT ((1)) FOR [UseReinsDates]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_StepTriggerCov]  DEFAULT ((0)) FOR [StepTriggerCov]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_StepTriggerCov]  DEFAULT ((0)) FOR [StepTriggerCov]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_StartTrigger]  DEFAULT ((0)) FOR [StartTrigger]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_StartTrigger]  DEFAULT ((0)) FOR [TriggerStart]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_EndTrigger]  DEFAULT ((0)) FOR [EndTrigger]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_EndTrigger]  DEFAULT ((0)) FOR [TriggerEnd]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_Deductible]  DEFAULT ((0)) FOR [Deductible]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_Payout]  DEFAULT ((0)) FOR [PayoutStart]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_Payout]  DEFAULT ((0)) FOR [Payout]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_PayoutEnd]  DEFAULT ((0)) FOR [PayoutEnd]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_MinimumTIV]  DEFAULT ((0)) FOR [MinimumTIV]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_Deductible]  DEFAULT ((0)) FOR [Deductible]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_ScaleFactor]  DEFAULT ((1)) FOR [ScaleFactor]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_PayoutLimit]  DEFAULT ((0)) FOR [PayoutLimit]
 GO
-ALTER TABLE [dbo].[StepFunctions] ADD  CONSTRAINT [DF_StepFunctions_IsLimitAtDamage]  DEFAULT ((0)) FOR [IsLimitAtDamage]
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_ExtraExpenseFactor]  DEFAULT ((1)) FOR [ExtraExpenseFactor]
+GO
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_ExtraExpenseLimit]  DEFAULT ((0)) FOR [ExtraExpenseLimit]
+GO
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_DebrisRemovalFactor]  DEFAULT ((1)) FOR [DebrisRemovalFactor]
+GO
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_MinimumTIV]  DEFAULT ((0)) FOR [MinimumTIV]
+GO
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_ScaleFactor]  DEFAULT ((1)) FOR [ScaleFactor]
+GO
+ALTER TABLE [dbo].[Steps] ADD  CONSTRAINT [DF_Steps_IsLimitAtDamage]  DEFAULT ((0)) FOR [IsLimitAtDamage]
 GO
 ALTER TABLE [dbo].[AccountFinancials]  WITH CHECK ADD  CONSTRAINT [FK_AccountFinancials_Accounts] FOREIGN KEY([AccID])
 REFERENCES [dbo].[Accounts] ([AccID])
@@ -4262,15 +4310,30 @@ REFERENCES [dbo].[Policies] ([PolID])
 GO
 ALTER TABLE [dbo].[StepFunctions] CHECK CONSTRAINT [FK_StepFunctions_Policies]
 GO
-ALTER TABLE [dbo].[StepFunctions]  WITH CHECK ADD  CONSTRAINT [FK_StepFunctions_xCoverages] FOREIGN KEY([StepTriggerCov])
-REFERENCES [dbo].[xCoverages] ([Code])
-GO
-ALTER TABLE [dbo].[StepFunctions] CHECK CONSTRAINT [FK_StepFunctions_xCoverages]
-GO
 ALTER TABLE [dbo].[StepFunctions]  WITH CHECK ADD  CONSTRAINT [FK_StepFunctions_xStepTriggerType] FOREIGN KEY([StepTriggerType])
 REFERENCES [dbo].[xStepTriggerType] ([Code])
 GO
 ALTER TABLE [dbo].[StepFunctions] CHECK CONSTRAINT [FK_StepFunctions_xStepTriggerType]
+GO
+ALTER TABLE [dbo].[Steps]  WITH CHECK ADD  CONSTRAINT [FK_Steps_StepFunctions] FOREIGN KEY([StepFuncID])
+REFERENCES [dbo].[StepFunctions] ([StepFuncID])
+GO
+ALTER TABLE [dbo].[Steps] CHECK CONSTRAINT [FK_Steps_StepFunctions]
+GO
+ALTER TABLE [dbo].[Steps]  WITH CHECK ADD  CONSTRAINT [FK_Steps_xCoverages] FOREIGN KEY([StepTriggerCov])
+REFERENCES [dbo].[xCoverages] ([Code])
+GO
+ALTER TABLE [dbo].[Steps] CHECK CONSTRAINT [FK_Steps_xCoverages]
+GO
+ALTER TABLE [dbo].[Steps]  WITH CHECK ADD  CONSTRAINT [FK_Steps_xLimitType_PayoutType] FOREIGN KEY([PayoutType])
+REFERENCES [dbo].[xLimitType] ([Code])
+GO
+ALTER TABLE [dbo].[Steps] CHECK CONSTRAINT [FK_Steps_xLimitType_PayoutType]
+GO
+ALTER TABLE [dbo].[Steps]  WITH CHECK ADD  CONSTRAINT [FK_Steps_xLimitType_TriggerType] FOREIGN KEY([TriggerType])
+REFERENCES [dbo].[xLimitType] ([Code])
+GO
+ALTER TABLE [dbo].[Steps] CHECK CONSTRAINT [FK_Steps_xLimitType_TriggerType]
 GO
 ALTER TABLE [dbo].[WorkersComp]  WITH CHECK ADD  CONSTRAINT [FK_WorkersComp_WorkersComp] FOREIGN KEY([LocID])
 REFERENCES [dbo].[Locations] ([LocID])
