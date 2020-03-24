@@ -17,10 +17,7 @@ The availability of an open code-set was extremely helpful to the development of
 OED comprises four input tables and 20+ relational database tables. 
 
 <b><a href="https://github.com/Simplitium/OED/tree/master/SQL%20Scripts">View the OED database SQL scripts.</a></b>
-                
-More information about the exposure data format can be found <b><a href="https://www.simplitium.com/modex/open-data-format">here.</a></b> For any queries relating to OED contact:            
-<b>oed@simplitium.com</b>
-                
+          
 Note: We cannot guarantee a response to all queries from non-Simplitium customers.         
                 
 The content of the Open Exposure Data (OED) format itself is licensed under the CC0 1.0 Universal license.             
