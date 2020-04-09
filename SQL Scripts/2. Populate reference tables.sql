@@ -3632,6 +3632,8 @@ INSERT [dbo].[xCountryCodeComments] ([CountryCode], [Non_ISO3166_code], [Offshor
 GO
 INSERT [dbo].[xCountryCodeComments] ([CountryCode], [Non_ISO3166_code], [Offshore]) VALUES (N'C2', N'In AIR: CAS', N'Caspian Sea')
 GO
+INSERT [dbo].[xCountryCodeComments] ([CountryCode], [Non_ISO3166_code], [Offshore]) VALUES (N'XK', N'OED defined code', N'')
+GO
 INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'A1', N'Alaska Offshore', 0, 0)
 GO
 INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'A2', N'Angola Offshore', 0, 0)
@@ -4188,6 +4190,8 @@ INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) 
 GO
 INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'XE', N'St. Eustatius', 1, 0)
 GO
+INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'XK', N'Kosavo', 1, 0)
+GO
 INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'XS', N'Saba', 1, 0)
 GO
 INSERT [dbo].[xCountryCodes] ([CountryCode], [CountryName], [Land], [Modelled]) VALUES (N'XW', N'Worldwide exposure - not used for modelling', 1, 0)
@@ -4222,395 +4226,395 @@ INSERT [dbo].[xCrippleWall] ([Code], [CodeDescription]) VALUES (1, N'No')
 GO
 INSERT [dbo].[xCrippleWall] ([Code], [CodeDescription]) VALUES (2, N'Yes')
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AED', N'United Arab Emirates Dirham', N'Arab Emirates', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AED', N'United Arab Emirates Dirham', N'Arab Emirates', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AFA', N'Afghan Afghani (Retired)', N'Afghanistan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AFA', N'Afghan Afghani (Retired)', N'Afghanistan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AFN', N'Afghanistan Afghani', N'Afghanistan', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AFN', N'Afghanistan Afghani', N'Afghanistan', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ALL', N'Albania Lek', N'Albania', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ALL', N'Albania Lek', N'Albania', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AMD', N'Armenia Dram', N'Armenia', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AMD', N'Armenia Dram', N'Armenia', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ANG', N'Netherlands Antillean Guilder', N'Netherlands', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ANG', N'Netherlands Antillean Guilder', N'Netherlands', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AOA', N'Angola Kwanza', N'Angola', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AOA', N'Angola Kwanza', N'Angola', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AON', N'Novo kwanza (Retired)', N'Angola', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AON', N'Novo kwanza (Retired)', N'Angola', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ARS', N'Argentina Peso', N'Argentina', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ARS', N'Argentina Peso', N'Argentina', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ATS', N'Austrian Schilling', N'Austria', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ATS', N'Austrian Schilling', N'Austria', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AUD', N'Australia Dollar', N'Australia', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AUD', N'Australia Dollar', N'Australia', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AWG', N'Aruba Guilder', N'Netherlands', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AWG', N'Aruba Guilder', N'Netherlands', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AZM', N'Old Azerbaijan Manat', N'Azerbaijan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AZM', N'Old Azerbaijan Manat', N'Azerbaijan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AZN', N'Azerbaijan Manat', N'Azerbaijan', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'AZN', N'Azerbaijan Manat', N'Azerbaijan', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BAM', N'Bosnia Convertible Marks', N'Bosnia and Herzegovina', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BAM', N'Bosnia Convertible Marks', N'Bosnia and Herzegovina', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BBD', N'Barbados Dollar', N'Barbados', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BBD', N'Barbados Dollar', N'Barbados', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BDT', N'Bangladesh Taka', N'Bangladesh', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BDT', N'Bangladesh Taka', N'Bangladesh', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BEF', N'Belgian Franc', N'Belgium', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BEF', N'Belgian Franc', N'Belgium', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BGL', N'Bulgarian Lev', N'Bulgaria', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BGL', N'Bulgarian Lev', N'Bulgaria', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BGN', N'Bulgaria Lev', N'Bulgaria', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BGN', N'Bulgaria Lev', N'Bulgaria', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BHD', N'Bahrain Dinar', N'Bahrain', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BHD', N'Bahrain Dinar', N'Bahrain', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BIF', N'Burundi Franc', N'Burundi', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BIF', N'Burundi Franc', N'Burundi', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BMD', N'Bermuda Dollar', N'Bermuda', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BMD', N'Bermuda Dollar', N'Bermuda', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BND', N'Brunei Dollar', N'Brunei', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BND', N'Brunei Dollar', N'Brunei', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BOB', N'Bolivia Boliviano', N'Bolivia', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BOB', N'Bolivia Boliviano', N'Bolivia', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BOV', N'Bolivia Mvdol', N'Bolivia', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BOV', N'Bolivia Mvdol', N'Bolivia', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BRL', N'Brazil Real', N'Brazil', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BRL', N'Brazil Real', N'Brazil', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BSD', N'Bahamas Dollar', N'Bahamas', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BSD', N'Bahamas Dollar', N'Bahamas', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BTN', N'Bhutan Ngultrum', N'Bhutan', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BTN', N'Bhutan Ngultrum', N'Bhutan', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BWP', N'Botswana Pula', N'Botswana', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BWP', N'Botswana Pula', N'Botswana', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BYN', N'Belarus Ruble', N'Belarus', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BYN', N'Belarus Ruble', N'Belarus', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BZD', N'Belize Dollar', N'Belize', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'BZD', N'Belize Dollar', N'Belize', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CAD', N'Canada Dollar', N'Canada', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CAD', N'Canada Dollar', N'Canada', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CDF', N'DR Congo Franc Congolais', N'Congo, Dem Rep of / Zaire', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CDF', N'DR Congo Franc Congolais', N'Congo, Dem Rep of / Zaire', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CHF', N'Switzerland Franc', N'Switzerland', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CHF', N'Switzerland Franc', N'Switzerland', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CLF', N'(Chile) Unidad de fomento', N'Chile', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CLF', N'(Chile) Unidad de fomento', N'Chile', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CLP', N'Chile Peso', N'Chile', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CLP', N'Chile Peso', N'Chile', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CNY', N'Chinese Yuan', N'China', NULL, 1, CAST(N'2018-10-02 17:49:18.037' AS DateTime), CAST(N'2018-10-02 17:49:18.037' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CNY', N'Chinese Yuan', N'China', NULL, 1, CAST(N'2018-10-02T17:49:18.037' AS DateTime), CAST(N'2018-10-02T17:49:18.037' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'COP', N'Colombia Peso', N'Colombia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'COP', N'Colombia Peso', N'Colombia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CRC', N'Costa Rica Colon', N'Costa Rica', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CRC', N'Costa Rica Colon', N'Costa Rica', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CUP', N'Cuba Peso', N'Cuba', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CUP', N'Cuba Peso', N'Cuba', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CVE', N'Cape Verde Escudo', N'Cape Verde', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CVE', N'Cape Verde Escudo', N'Cape Verde', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CYP', N'Cypriot Pound', N'Cyprus', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CYP', N'Cypriot Pound', N'Cyprus', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CZK', N'Czech Republic Koruna', N'Czech Republic', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'CZK', N'Czech Republic Koruna', N'Czech Republic', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DEM', N'Deutsche Mark', N'Germany', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DEM', N'Deutsche Mark', N'Germany', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DJF', N'Djibouti Franc', N'Djibouti', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DJF', N'Djibouti Franc', N'Djibouti', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DKK', N'Denmark Krone', N'Denmark', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DKK', N'Denmark Krone', N'Denmark', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DOP', N'Dominican Rep. Peso', N'Dominican', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DOP', N'Dominican Rep. Peso', N'Dominican', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DZD', N'Algeria Dinar', N'Algeria', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'DZD', N'Algeria Dinar', N'Algeria', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EEK', N'Estonia Kroon', N'Estonia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EEK', N'Estonia Kroon', N'Estonia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EGP', N'Egypt Pound', N'Egypt', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EGP', N'Egypt Pound', N'Egypt', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ERN', N'Eritrea Nakfa', N'Eritrea', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ERN', N'Eritrea Nakfa', N'Eritrea', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ETB', N'Ethiopia Birr', N'Ethiopia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ETB', N'Ethiopia Birr', N'Ethiopia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EUR', N'Euro', N'Europe', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'EUR', N'Euro', N'Europe', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FJD', N'Fiji Dollar', N'Fiji', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FJD', N'Fiji Dollar', N'Fiji', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FKP', N'Falkland Islands Pound', N'Falkland Islands (Islas Malvinas)', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FKP', N'Falkland Islands Pound', N'Falkland Islands (Islas Malvinas)', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FRF', N'French Franc', N'France', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'FRF', N'French Franc', N'France', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GBP', N'Great Britain Pound', N'United Kingdom', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GBP', N'Great Britain Pound', N'United Kingdom', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GEL', N'Georgia Lari', N'Georgia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GEL', N'Georgia Lari', N'Georgia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GHC', N'Ghana Cedi (Old)', N'Ghana', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GHC', N'Ghana Cedi (Old)', N'Ghana', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GHS', N'Ghana Cedi', N'Ghana', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GHS', N'Ghana Cedi', N'Ghana', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GIP', N'Gibraltar Pound', N'Gibraltar', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GIP', N'Gibraltar Pound', N'Gibraltar', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GMD', N'Gambia Dalasi', N'Gambia, The', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GMD', N'Gambia Dalasi', N'Gambia, The', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GNF', N'Guinea Franc', N'Guinea', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GNF', N'Guinea Franc', N'Guinea', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GRD', N'Greek Drachmas', N'Greece', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GRD', N'Greek Drachmas', N'Greece', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GTQ', N'Guatemala Quetzal', N'Guatemala', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GTQ', N'Guatemala Quetzal', N'Guatemala', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GYD', N'Guyana Dollar', N'Guyana', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'GYD', N'Guyana Dollar', N'Guyana', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HKD', N'Hong Kong Dollar', N'Hong Kong', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HKD', N'Hong Kong Dollar', N'Hong Kong', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HNL', N'Honduras Lempira', N'Honduras', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HNL', N'Honduras Lempira', N'Honduras', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HRK', N'Croatia Kuna', N'Croatia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HRK', N'Croatia Kuna', N'Croatia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HTG', N'Haiti Gourde', N'Haiti', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HTG', N'Haiti Gourde', N'Haiti', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HUF', N'Hungary Forint', N'Hungary', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'HUF', N'Hungary Forint', N'Hungary', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IDR', N'Indonesia Rupiah', N'Indonesia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IDR', N'Indonesia Rupiah', N'Indonesia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IEP', N'Ireland Pound', N'Ireland', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IEP', N'Ireland Pound', N'Ireland', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ILS', N'Israel New Shekel', N'Israel', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ILS', N'Israel New Shekel', N'Israel', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'INR', N' India Rupee', N'India', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'INR', N' India Rupee', N'India', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IQD', N'Iraq Dinar', N'Iraq', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IQD', N'Iraq Dinar', N'Iraq', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IRR', N'Iran Rial', N'Iran', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'IRR', N'Iran Rial', N'Iran', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ISK', N'Iceland Krona', N'Iceland', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ISK', N'Iceland Krona', N'Iceland', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ITL', N'Italian Lira', N'Italy', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ITL', N'Italian Lira', N'Italy', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JMD', N'Jamaica Dollar', N'Jamaica', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JMD', N'Jamaica Dollar', N'Jamaica', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JOD', N'Jordan Dinar', N'Jordan', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JOD', N'Jordan Dinar', N'Jordan', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JPY', N'Japan Yen', N'Japan', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'JPY', N'Japan Yen', N'Japan', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KES', N'Kenya Shilling', N'Kenya', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KES', N'Kenya Shilling', N'Kenya', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KGS', N'Kyrgyzstan Som', N'Kyrgyzstan', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KGS', N'Kyrgyzstan Som', N'Kyrgyzstan', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KHR', N'Cambodia Riel', N'Cambodia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KHR', N'Cambodia Riel', N'Cambodia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KMF', N'Comoro Franc', N'Comoros', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KMF', N'Comoro Franc', N'Comoros', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KPW', N'North Korea Won', N'Korea, North', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KPW', N'North Korea Won', N'Korea, North', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KRW', N'South Korea Won', N'Republic of Korea', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KRW', N'South Korea Won', N'Republic of Korea', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KWD', N' Kuwait Dinar', N'Kuwait', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KWD', N' Kuwait Dinar', N'Kuwait', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KYD', N'Cayman Islands Dollar', N'Cayman Islands', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KYD', N'Cayman Islands Dollar', N'Cayman Islands', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KZT', N'Kazakhstan Tenge', N'Kazakhstan', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'KZT', N'Kazakhstan Tenge', N'Kazakhstan', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LAK', N'Laos Kip', N'Laos', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LAK', N'Laos Kip', N'Laos', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LBP', N'Lebanon Pound', N'Lebanon', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LBP', N'Lebanon Pound', N'Lebanon', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LKR', N'Sri Lanka Rupee', N'Sri Lanka', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LKR', N'Sri Lanka Rupee', N'Sri Lanka', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LRD', N'Liberia Dollar', N'Liberia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LRD', N'Liberia Dollar', N'Liberia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LSL', N'Lesotho Loti', N'Lesotho', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LSL', N'Lesotho Loti', N'Lesotho', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LTL', N'Lithuania Litas', N'Lithuania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LTL', N'Lithuania Litas', N'Lithuania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LUF', N'Luxembourg Franc', N'Luxembourg', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LUF', N'Luxembourg Franc', N'Luxembourg', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LVL', N'Latvia Lats', N'Latvia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LVL', N'Latvia Lats', N'Latvia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LYD', N'Libya Dinar', N'Libya', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'LYD', N'Libya Dinar', N'Libya', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MAD', N'Morocco Dirham', N'Morocco', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MAD', N'Morocco Dirham', N'Morocco', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MDL', N'Moldova Leu', N'Moldova', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MDL', N'Moldova Leu', N'Moldova', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MGA', N'Madagascar Malagasy Ariary', N'Madagascar', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MGA', N'Madagascar Malagasy Ariary', N'Madagascar', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MKD', N'Macedonia Denar', N'Macedonia, The Republic of', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MKD', N'Macedonia Denar', N'Macedonia, The Republic of', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MMK', N'Myanmar Kyat', N'Burma / Myanmar', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MMK', N'Myanmar Kyat', N'Burma / Myanmar', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MNT', N'Mongolia Tugrik', N'Mongolia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MNT', N'Mongolia Tugrik', N'Mongolia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MOP', N'Macau Pataca', N'Macau', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MOP', N'Macau Pataca', N'Macau', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MRO', N'Mauritania Ouguiya (old)', N'Mauritania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MRO', N'Mauritania Ouguiya (old)', N'Mauritania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MRU', N'Mauritania Ouguiya', N'Mauritania', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MRU', N'Mauritania Ouguiya', N'Mauritania', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MTL', N'Malta Lira', N'Malta', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MTL', N'Malta Lira', N'Malta', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MUR', N'Mauritius Rupee', N'Mauritius', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MUR', N'Mauritius Rupee', N'Mauritius', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MVR', N'Maldives Rufiyaa', N'Maldives', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MVR', N'Maldives Rufiyaa', N'Maldives', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MWK', N'Malawi Kwacha', N'Malawi', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MWK', N'Malawi Kwacha', N'Malawi', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXN', N'Mexico Peso', N'Mexico', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXN', N'Mexico Peso', N'Mexico', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXP', N'Mexico Peso', N'Mexico', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXP', N'Mexico Peso', N'Mexico', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXV', N'Mexico Unidad de Inversion', N'Mexico', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MXV', N'Mexico Unidad de Inversion', N'Mexico', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MYR', N'Malaysia Ringgit', N'Malaysia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MYR', N'Malaysia Ringgit', N'Malaysia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MZM', N'Mozambican Metical (Retired)', N'Mozambique', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MZM', N'Mozambican Metical (Retired)', N'Mozambique', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MZN', N'Mozambique Metical', N'Mozambique', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'MZN', N'Mozambique Metical', N'Mozambique', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NAD', N'Namibia Dollar', N'Namibia', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NAD', N'Namibia Dollar', N'Namibia', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NGN', N'Nigeria Naira', N'Nigeria', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NGN', N'Nigeria Naira', N'Nigeria', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NIO', N'Nicaragua Cordoba Oro', N'Nicaragua', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NIO', N'Nicaragua Cordoba Oro', N'Nicaragua', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NIS', N'Israeli New Shekel', N'Israel', N'Unofficial currency code', 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NIS', N'Israeli New Shekel', N'Israel', N'Unofficial currency code', 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NLG', N'Dutch Guilder', N'Netherlands', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NLG', N'Dutch Guilder', N'Netherlands', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NOK', N'Norway Kroner', N'Norway', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NOK', N'Norway Kroner', N'Norway', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NPR', N'Nepal Rupee', N'Nepal', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NPR', N'Nepal Rupee', N'Nepal', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NZD', N'New Zealand Dollar', N'New Zealand', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'NZD', N'New Zealand Dollar', N'New Zealand', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'OMR', N'Oman Rial', N'Oman', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'OMR', N'Oman Rial', N'Oman', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PAB', N'Panama Balboa', N'Panama', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PAB', N'Panama Balboa', N'Panama', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PEN', N'Peru Nuevo Sol', N'Peru', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PEN', N'Peru Nuevo Sol', N'Peru', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PGK', N'Papua New Guinea Kina', N'Papua New Guinea', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PGK', N'Papua New Guinea Kina', N'Papua New Guinea', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PHP', N'Philippines Peso', N'Philippines', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PHP', N'Philippines Peso', N'Philippines', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PKR', N'Pakistan Rupee', N'Pakistan', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PKR', N'Pakistan Rupee', N'Pakistan', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PLN', N'Poland Zloty', N'Poland', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PLN', N'Poland Zloty', N'Poland', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PTE', N'Portuguese Escudo', N'Portugal', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PTE', N'Portuguese Escudo', N'Portugal', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PYG', N'Paraguay Guarani', N'Paraguay', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'PYG', N'Paraguay Guarani', N'Paraguay', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'QAR', N'Qatar Rial', N'Qatar', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'QAR', N'Qatar Rial', N'Qatar', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ROL', N'Romanian Leu', N'Romania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ROL', N'Romanian Leu', N'Romania', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RON', N'Romania New Leu', N'Romania', NULL, 1, CAST(N'2018-10-02 17:49:18.053' AS DateTime), CAST(N'2018-10-02 17:49:18.053' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RON', N'Romania New Leu', N'Romania', NULL, 1, CAST(N'2018-10-02T17:49:18.053' AS DateTime), CAST(N'2018-10-02T17:49:18.053' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RSD', N'Serbia Dinar', N'Serbia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RSD', N'Serbia Dinar', N'Serbia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RUB', N'Russia Ruble', N'Russia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RUB', N'Russia Ruble', N'Russia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RWF', N'Rwanda Franc', N'Rwanda', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'RWF', N'Rwanda Franc', N'Rwanda', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SAR', N'Saudi Arabia Riyal', N'Saudi Arabia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SAR', N'Saudi Arabia Riyal', N'Saudi Arabia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SBD', N'Solomon Islands Dollar', N'Solomon Islands', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SBD', N'Solomon Islands Dollar', N'Solomon Islands', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SCR', N'Seychelles Rupee', N'Seychelles', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SCR', N'Seychelles Rupee', N'Seychelles', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SDD', N'Sudan Dinar', N'Sudan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SDD', N'Sudan Dinar', N'Sudan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SDG', N'Sudan Pound', N'Sudan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SDG', N'Sudan Pound', N'Sudan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SEK', N'Sweden Krona', N'Sweden', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SEK', N'Sweden Krona', N'Sweden', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SGD', N'Singapore Dollar', N'SINGAPORE', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SGD', N'Singapore Dollar', N'SINGAPORE', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SHP', N'Saint Helena Pound', N'St. Helena', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SHP', N'Saint Helena Pound', N'St. Helena', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SIT', N'Slovenia Tolar', N'Slovenia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SIT', N'Slovenia Tolar', N'Slovenia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SKK', N'Slovak Koruna', N'Slovakia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SKK', N'Slovak Koruna', N'Slovakia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SLL', N'Sierra Leone, Leone', N'Sierra Leone', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SLL', N'Sierra Leone, Leone', N'Sierra Leone', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SOS', N'Somalia Shilling', N'Somalia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SOS', N'Somalia Shilling', N'Somalia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SRD', N'Suriname Dollar', N'Suriname', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SRD', N'Suriname Dollar', N'Suriname', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SSP', N'South Sudanese pound', N'South Sudan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SSP', N'South Sudanese pound', N'South Sudan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'STD', N'Sao Tome and Principe Dobra (Old)', N'Sao Tome & Principe', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'STD', N'Sao Tome and Principe Dobra (Old)', N'Sao Tome & Principe', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'STN', N'Sao Tome and Principe Dobra', N'Sao Tome & Principe', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'STN', N'Sao Tome and Principe Dobra', N'Sao Tome & Principe', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SVC', N'El Salvador Colon', N'El Salvador', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SVC', N'El Salvador Colon', N'El Salvador', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SYP', N'Syria Pound', N'Syria', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SYP', N'Syria Pound', N'Syria', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SZL', N'Swaziland Lilangeni', N'Swaziland', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'SZL', N'Swaziland Lilangeni', N'Swaziland', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'THB', N'Thailand Baht', N'Thailand', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'THB', N'Thailand Baht', N'Thailand', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TJS', N'Tajikistan Somoni', N'Tajikistan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TJS', N'Tajikistan Somoni', N'Tajikistan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TMM', N'Turkmen Manat (Retired)', N'Turkmenistan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TMM', N'Turkmen Manat (Retired)', N'Turkmenistan', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TMT', N'Turkmenistani  Manat', N'Turkmenistan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TMT', N'Turkmenistani  Manat', N'Turkmenistan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TND', N'Tunisia Dinar', N'Tunisia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TND', N'Tunisia Dinar', N'Tunisia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TOP', N'Tonga Paanga', N'Tonga', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TOP', N'Tonga Paanga', N'Tonga', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TRL', N'Turkish Lira', N'Turkey', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TRL', N'Turkish Lira', N'Turkey', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TRY', N'Turkey New Lira', N'Turkey', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TRY', N'Turkey New Lira', N'Turkey', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TTD', N'Trinidad and Tobago Dollar', N'Trinidad & Tobago', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TTD', N'Trinidad and Tobago Dollar', N'Trinidad & Tobago', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TWD', N'Taiwan Dollar', N'Taiwan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TWD', N'Taiwan Dollar', N'Taiwan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TZS', N'Tanzania Shilling', N'Tanzania', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'TZS', N'Tanzania Shilling', N'Tanzania', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UAH', N'Ukraine Hryvnia', N'Ukraine', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UAH', N'Ukraine Hryvnia', N'Ukraine', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UF', N'(Chile) Unidades de fomento', N'Chile', N'Not in ISO4217 standard', 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UF', N'(Chile) Unidades de fomento', N'Chile', N'Not in ISO4217 standard', 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UGX', N'Uganda Shilling', N'Uganda', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UGX', N'Uganda Shilling', N'Uganda', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'USD', N'U.S. Dollar', N'United States', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'USD', N'U.S. Dollar', N'United States', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UYU', N'Uruguay Peso', N'Uruguay', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UYU', N'Uruguay Peso', N'Uruguay', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UZS', N'Uzbekistan Som', N'Uzbekistan', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'UZS', N'Uzbekistan Som', N'Uzbekistan', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VEB', N'Venezuelan Bolivar (Retired)', N'Venezuela', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VEB', N'Venezuelan Bolivar (Retired)', N'Venezuela', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VEF', N'Venezuela Bolivar Fuerte', N'Venezuela', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VEF', N'Venezuela Bolivar Fuerte', N'Venezuela', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VES', N'Venezuelan Bolivar Soberano', N'Venezuela', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VES', N'Venezuelan Bolivar Soberano', N'Venezuela', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VND', N'Vietnam Dong', N'Vietnam', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VND', N'Vietnam Dong', N'Vietnam', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VUV', N'Vanuatu Vatu', N'Vanuatu', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'VUV', N'Vanuatu Vatu', N'Vanuatu', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'WST', N'Samoa Tala', N'Western Samoa', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'WST', N'Samoa Tala', N'Western Samoa', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XAF', N'CFA Franc BEAC', N'Central Africa', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XAF', N'CFA Franc BEAC', N'Central Africa', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XCD', N'Eastern Caribbean Dollar', N'Caribbean', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XCD', N'Eastern Caribbean Dollar', N'Caribbean', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XOF', N'CFA Franc BCEAO', N'West Africa', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XOF', N'CFA Franc BCEAO', N'West Africa', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XPF', N'CFP Franc', N'Pacific Franc Exchange', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'XPF', N'CFP Franc', N'Pacific Franc Exchange', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'YER', N'Yemen Rial', N'Yemen', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'YER', N'Yemen Rial', N'Yemen', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZAR', N'South Africa Rand', N'South Africa', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZAR', N'South Africa Rand', N'South Africa', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZMK', N'Zambia Kwacha', N'Zambia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZMK', N'Zambia Kwacha', N'Zambia', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZMW', N'Zambian Kwacha', N'Zambia', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZMW', N'Zambian Kwacha', N'Zambia', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZWD', N'Zimbabwean Dollar', N'Zimbabwe', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZWD', N'Zimbabwean Dollar', N'Zimbabwe', N'Historic ISO4217 standard code', 0, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
-INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZWL', N'Zimbabwe Dollar', N'Zimbabwe', NULL, 1, CAST(N'2018-10-02 17:49:18.067' AS DateTime), CAST(N'2018-10-02 17:49:18.067' AS DateTime))
+INSERT [dbo].[xCurrency] ([CurrencyCode], [CurrencyName], [CountryName], [Notes], [Valid], [EnteredOn], [UpdatedOn]) VALUES (N'ZWL', N'Zimbabwe Dollar', N'Zimbabwe', NULL, 1, CAST(N'2018-10-02T17:49:18.067' AS DateTime), CAST(N'2018-10-02T17:49:18.067' AS DateTime))
 GO
 INSERT [dbo].[xDedCode] ([Code], [CodeDescription], [Notes]) VALUES (0, N'Regular Deductible', NULL)
 GO
@@ -4836,8 +4840,6 @@ INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (1, N'% of
 GO
 INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (2, N'% of TIV', N'Values <= 1 only')
 GO
-INSERT [dbo].[xLimitType] ([Code], [CodeDescription], [Notes]) VALUES (3, N'% of Limit', N'Values <= 1 only; used for step policies only in PayoutType field')
-GO
 INSERT [dbo].[xMechanicalEquipmentSide] ([Code], [CodeDescription]) VALUES (0, N'Unknown')
 GO
 INSERT [dbo].[xMechanicalEquipmentSide] ([Code], [CodeDescription]) VALUES (1, N'Vulnerable')
@@ -4987,6 +4989,12 @@ GO
 INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1352, N'Green House', N'Includes establishments (e.g., farms, orchards, greenhouses, and nurseries) primarily engaged in the production of crops, plants, vines, and trees (excluding forestry operations). This major group also includes establishments primarily engaged in the operation of sod farms and cranberry bogs, in the production of mushrooms, bulbs, flower seeds, and vegetable seeds, and in the growing of hydroponic crops.', N'1350 - 1399', N'Miscellaneous', N'374')
 GO
 INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1353, N'Forestry', N'Forestry', N'1350 - 1399', N'Miscellaneous', N'375')
+GO
+INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1354, N'Forestry, Spruce', N'Forestry, Spruce', N'1350 - 1399', N'Miscellaneous', N'N/A')
+GO
+INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1355, N'Forestry, Birch', N'Forestry, Birch', N'1350 - 1399', N'Miscellaneous', N'N/A')
+GO
+INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (1356, N'Forestry, Pine', N'Forestry, Pine', N'1350 - 1399', N'Miscellaneous', N'N/A')
 GO
 INSERT [dbo].[xOccupancy] ([Code], [OccupancyName], [OccupancyDescription], [CodeRange], [CategoryName], [AIRcode]) VALUES (2000, N'Industrial Facilities Model,  IFM: Unknown', N'Unknown industrial facility.', N'2000', N'IFM Unknown', N'400')
 GO
@@ -5215,6 +5223,14 @@ GO
 INSERT [dbo].[xPayoutBasis] ([Code], [CodeDescription], [Notes]) VALUES (1, N'ACV', N'Actual Cost Values')
 GO
 INSERT [dbo].[xPayoutBasis] ([Code], [CodeDescription], [Notes]) VALUES (2, N'RCV', N'Replacement Cost Value')
+GO
+INSERT [dbo].[xPayOutType] ([Code], [CodeDescription], [Notes]) VALUES (0, N'Amount', N'For limits, 0 = unlimited')
+GO
+INSERT [dbo].[xPayOutType] ([Code], [CodeDescription], [Notes]) VALUES (1, N'% of loss', N'Values <= 1 only')
+GO
+INSERT [dbo].[xPayOutType] ([Code], [CodeDescription], [Notes]) VALUES (2, N'% of TIV', N'Values <= 1 only')
+GO
+INSERT [dbo].[xPayOutType] ([Code], [CodeDescription], [Notes]) VALUES (3, N'% of Limit', N'Values <= 1 only')
 GO
 INSERT [dbo].[xPounding] ([Code], [CodeDescription]) VALUES (0, N'Unknown / default')
 GO
