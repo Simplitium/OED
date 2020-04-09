@@ -1,13 +1,15 @@
 # Changes to OED DB
 
-## OED v1.1.0:
+## OED v1.1.1:
 
-•	Split StepFunctions table into StepFunctions and Steps
+•	Updated script 3 to pick up whether perils are grouped
 
-•	Added additional fields in Steps table: PayutType, TriggerType, PayoutEnd, PayoutLimit, ExtraExpenseFactor, ExtraExpenseLimit, DebrisRemovalFactor
+•	Added PayOutType Reference table
 
-•	Renamed several fields in Steps table: StartTrigger to TriggerStart, EndTrigger to TriggerEnd and Payout to PayoutStart
+•	Removed unaccepable value (=3) from LimitType reference table
 
-•	Add a new LimitType = 3 in the xLimitType reference table
+•	Added 3 additional detailed Forestry occupancy codes (Spruce, Birch, Pine)
 
-•	Updated description for 1056 occupancy code
+•	Added 'XK' for Kosavo Country code
+
+•	Updated IsLimitAtDamage data type to bit.
