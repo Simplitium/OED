@@ -1,12 +1,12 @@
 USE [master]
 GO
-/****** Object:  Database [OED]    Script Date: 30/12/2019 10:18:20 ******/
+/****** Object:  Database [OED]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE DATABASE [OED]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'OED', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED.mdf' , SIZE = 4091328KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+( NAME = N'OED', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\OED.mdf' , SIZE = 4091328KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
  LOG ON 
-( NAME = N'OED_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\OED_log.ldf' , SIZE = 8913920KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+( NAME = N'OED_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\OED_log.ldf' , SIZE = 1114120KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
 ALTER DATABASE [OED] SET COMPATIBILITY_LEVEL = 120
 GO
@@ -73,11 +73,11 @@ ALTER DATABASE [OED] SET TARGET_RECOVERY_TIME = 60 SECONDS
 GO
 ALTER DATABASE [OED] SET DELAYED_DURABILITY = DISABLED 
 GO
-EXEC sys.sp_db_vardecimal_storage_format N'OED', N'ON'
+ALTER DATABASE [OED] SET QUERY_STORE = OFF
 GO
 USE [OED]
 GO
-/****** Object:  UserDefinedFunction [dbo].[BinaryToDecimal]    Script Date: 30/12/2019 10:18:20 ******/
+/****** Object:  UserDefinedFunction [dbo].[BinaryToDecimal]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,7 +105,7 @@ BEGIN
 END
 
 GO
-/****** Object:  UserDefinedFunction [dbo].[DecimalToBinary]    Script Date: 30/12/2019 10:18:20 ******/
+/****** Object:  UserDefinedFunction [dbo].[DecimalToBinary]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -132,82 +132,7 @@ BEGIN
 END
 
 GO
-/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 30/12/2019 10:18:20 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[AccountFinancials](
-	[AccFinID] [bigint] IDENTITY(1,1) NOT NULL,
-	[AccID] [bigint] NOT NULL,
-	[PerilCode] [int] NOT NULL,
-	[DedCode] [tinyint] NOT NULL,
-	[DedCov] [tinyint] NOT NULL,
-	[DedType] [tinyint] NOT NULL,
-	[Ded] [float] NOT NULL,
-	[MinDed] [float] NOT NULL,
-	[MaxDed] [float] NOT NULL,
-	[LimitCode] [tinyint] NOT NULL,
-	[LimitCov] [tinyint] NOT NULL,
-	[LimitType] [tinyint] NOT NULL,
-	[Limit] [float] NOT NULL,
- CONSTRAINT [PK_AccountFinancials] PRIMARY KEY CLUSTERED 
-(
-	[AccFinID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Accounts]    Script Date: 30/12/2019 10:18:20 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Accounts](
-	[AccID] [bigint] IDENTITY(1,1) NOT NULL,
-	[AccNumber] [nvarchar](40) NOT NULL,
-	[AccName] [nvarchar](100) NOT NULL,
-	[AccGroup] [varchar](40) NULL,
-	[AccStatus] [char](1) NOT NULL,
-	[ExpiringAccNumber] [nvarchar](40) NULL,
-	[CedantID] [bigint] NULL,
-	[Currency] [varchar](3) NOT NULL,
-	[AccUserDef1] [varchar](20) NULL,
-	[AccUserDef2] [varchar](20) NULL,
-	[AccUserDef3] [varchar](20) NULL,
-	[AccUserDef4] [varchar](20) NULL,
-	[AccUserDef5] [varchar](20) NULL,
- CONSTRAINT [PK_Contracts] PRIMARY KEY CLUSTERED 
-(
-	[AccID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[Cedants]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Cedants](
-	[CedantID] [bigint] IDENTITY(1,1) NOT NULL,
-	[CedantName] [varchar](40) NOT NULL,
- CONSTRAINT [PK_Cedants] PRIMARY KEY CLUSTERED 
-(
-	[CedantID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ConditionFinancials]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,14 +156,11 @@ CREATE TABLE [dbo].[ConditionFinancials](
 	[CondFinID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[Conditions]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[Conditions]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Conditions](
 	[CondID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -252,16 +174,684 @@ CREATE TABLE [dbo].[Conditions](
 	[CondID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
+
+CREATE VIEW [dbo].[vConditionFinancials]
+AS
+SELECT        cond.CondID, ISNULL(condf.PerilCode, 0) as PerilCode, cond.Currency, 
+	CASE WHEN condf.CondID IS NULL THEN 'No' ELSE 'Yes' END AS CondDedOrLimExists,
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS CondDedCode1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS CondDedType1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS CondDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS CondMinDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS CondDedCode2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS CondDedType2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS CondDed2Other, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS CondMinDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS CondDedCode3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS CondDedType3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS CondDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS CondMinDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS CondDedCode4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS CondDedType4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS CondDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS CondMinDed4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS CondDedCode5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS CondDedType5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS CondDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS CondMinDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS CondDedCode6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS CondDedType6All, 
+    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS CondDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS CondMinDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed6All, 
+    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode1Building,
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS CondLimitType1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS CondLimit1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS CondLimitType2Other, 
+    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS CondLimit2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS CondLimitType3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS CondLimit3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode4BI, 
+    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS CondLimitType4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS CondLimit4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS CondLimitType5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS CondLimit5PD, 
+    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS CondLimitType6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS CondLimit6All
+FROM  Conditions Cond LEFT JOIN  dbo.ConditionFinancials condf
+	ON cond.CondID = condf.CondID
+GROUP BY cond.CondID, ISNULL(condf.PerilCode, 0), Cond.Currency, 
+	CASE WHEN Condf.CondID IS NULL THEN 'No' ELSE 'Yes' END
+
+
+
+GO
+/****** Object:  Table [dbo].[Accounts]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Accounts](
+	[AccID] [bigint] IDENTITY(1,1) NOT NULL,
+	[AccNumber] [nvarchar](40) NOT NULL,
+	[AccName] [nvarchar](100) NOT NULL,
+	[AccGroup] [varchar](40) NULL,
+	[AccStatus] [char](1) NOT NULL,
+	[ExpiringAccNumber] [nvarchar](40) NULL,
+	[CedantID] [bigint] NULL,
+	[Currency] [varchar](3) NOT NULL,
+	[AccUserDef1] [varchar](20) NULL,
+	[AccUserDef2] [varchar](20) NULL,
+	[AccUserDef3] [varchar](20) NULL,
+	[AccUserDef4] [varchar](20) NULL,
+	[AccUserDef5] [varchar](20) NULL,
+ CONSTRAINT [PK_Contracts] PRIMARY KEY CLUSTERED 
+(
+	[AccID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LocCond]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LocCond](
+	[PolID] [bigint] NOT NULL,
+	[LocID] [bigint] NOT NULL,
+	[CondID] [bigint] NOT NULL,
+ CONSTRAINT [PK_LocCond] PRIMARY KEY CLUSTERED 
+(
+	[PolID] ASC,
+	[LocID] ASC,
+	[CondID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Policies]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Policies](
+	[PolID] [bigint] IDENTITY(1,1) NOT NULL,
+	[AccID] [bigint] NOT NULL,
+	[PolNumber] [varchar](20) NOT NULL,
+	[PolStatus] [char](1) NOT NULL,
+	[LayerNumber] [int] NOT NULL,
+	[InceptionDate] [smalldatetime] NULL,
+	[ExpiryDate] [smalldatetime] NULL,
+	[ProducerID] [bigint] NULL,
+	[Underwriter] [varchar](40) NULL,
+	[BranchName] [varchar](20) NULL,
+	[LOBID] [bigint] NULL,
+	[ExpiringPolNumber] [varchar](20) NULL,
+	[PerilsCovered] [int] NOT NULL,
+	[GrossPremium] [float] NOT NULL,
+	[Tax] [float] NOT NULL,
+	[Brokerage] [float] NOT NULL,
+	[NetPremium] [float] NOT NULL,
+	[LayerParticipation] [float] NOT NULL,
+	[LayerLimit] [float] NOT NULL,
+	[LayerAttachment] [float] NOT NULL,
+	[Currency] [varchar](3) NOT NULL,
+	[HoursClause] [int] NULL,
+	[PolUserDef1] [varchar](20) NULL,
+	[PolUserDef2] [varchar](20) NULL,
+	[PolUserDef3] [varchar](20) NULL,
+	[PolUserDef4] [varchar](20) NULL,
+	[PolUserDef5] [varchar](20) NULL,
+ CONSTRAINT [PK_Layers] PRIMARY KEY CLUSTERED 
+(
+	[PolID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[vCondPerPolicy]
+AS
+SELECT distinct pol.PolID, vcondf.PerilCode, cond.CondID, cond.CondNumber, cond.CondName,
+	vcondf.Currency, vcondf.CondDedOrLimExists, 
+	vcondf.CondDedCode1Building, vcondf.CondDedType1Building, vcondf.CondDed1Building, 
+	vcondf.CondMinDed1Building, vcondf.CondMaxDed1Building,
+	vcondf.CondDedCode2Other, vcondf.CondDedType2Other, vcondf.CondDed2Other, 
+	vcondf.CondMinDed2Other, vcondf.CondMaxDed2Other,
+	vcondf.CondDedCode3Contents, vcondf.CondDedType3Contents, vcondf.CondDed3Contents, 
+	vcondf.CondMinDed3Contents, vcondf.CondMaxDed3Contents,
+	vcondf.CondDedCode4BI, vcondf.CondDedType4BI, vcondf.CondDed4BI, vcondf.CondMinDed4BI, vcondf.CondMaxDed4BI,
+	vcondf.CondDedCode5PD, vcondf.CondDedType5PD, vcondf.CondDed5PD, vcondf.CondMinDed5PD, vcondf.CondMaxDed5PD,
+	vcondf.CondDedCode6All, vcondf.CondDedType6All, vcondf.CondDed6All, vcondf.CondMinDed6All, vcondf.CondMaxDed6All,
+	vcondf.CondLimitCode1Building, vcondf.CondLimitType1Building, vcondf.CondLimit1Building, 
+	vcondf.CondLimitCode2Other, vcondf.CondLimitType2Other, vcondf.CondLimit2Other,
+	vcondf.CondLimitCode3Contents, vcondf.CondLimitType3Contents, vcondf.CondLimit3Contents, 
+	vcondf.CondLimitCode4BI, vcondf.CondLimitType4BI, vcondf.CondLimit4BI,
+	vcondf.CondLimitCode5PD, vcondf.CondLimitType5PD, vcondf.CondLimit5PD, 
+	vcondf.CondLimitCode6All, vcondf.CondLimitType6All, vcondf.CondLimit6All
+FROM Accounts acc INNER JOIN Policies pol 
+	ON acc.AccID = pol.AccID
+		INNER JOIN Conditions cond 
+	ON acc.AccID = cond.AccID
+		INNER JOIN vConditionFinancials vcondf
+	ON cond.CondID = vcondf.CondID
+		INNER JOIN LocCond lc
+	ON cond.CondID = lc.CondID and pol.PolID = lc.PolID
+
+
+
+GO
+/****** Object:  Table [dbo].[AccountFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AccountFinancials](
+	[AccFinID] [bigint] IDENTITY(1,1) NOT NULL,
+	[AccID] [bigint] NOT NULL,
+	[PerilCode] [int] NOT NULL,
+	[DedCode] [tinyint] NOT NULL,
+	[DedCov] [tinyint] NOT NULL,
+	[DedType] [tinyint] NOT NULL,
+	[Ded] [float] NOT NULL,
+	[MinDed] [float] NOT NULL,
+	[MaxDed] [float] NOT NULL,
+	[LimitCode] [tinyint] NOT NULL,
+	[LimitCov] [tinyint] NOT NULL,
+	[LimitType] [tinyint] NOT NULL,
+	[Limit] [float] NOT NULL,
+ CONSTRAINT [PK_AccountFinancials] PRIMARY KEY CLUSTERED 
+(
+	[AccFinID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[vAccountFinancials]
+AS
+SELECT        acc.AccID, ISNULL(PerilCode, 0) AS PerilCode, Acc.Currency, 
+	CASE WHEN accf.AccID IS NULL THEN 'No' ELSE 'Yes' END AS DedOrLimExists,
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS AccDedCode1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS AccDedType1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS AccDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS AccMinDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS AccDedCode2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS AccDedType2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS AccDed2Other, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS AccMinDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS AccDedCode3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS AccDedType3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS AccDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS AccMinDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS AccDedCode4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS AccDedType4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS AccDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS AccMinDed4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS AccDedCode5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS AccDedType5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS AccDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS AccMinDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS AccDedCode6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS AccDedType6All, 
+    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS AccDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS AccMinDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed6All, 
+    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode1Building,
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS AccLimitType1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS AccLimit1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS AccLimitType2Other, 
+    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS AccLimit2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS AccLimitType3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS AccLimit3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode4BI, 
+    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS AccLimitType4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS AccLimit4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS AccLimitType5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS AccLimit5PD, 
+    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS AccLimitType6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS AccLimit6All
+FROM  Accounts acc LEFT JOIN  dbo.AccountFinancials accf
+	ON acc.AccID = accf.AccID
+GROUP BY acc.AccID, ISNULL(PerilCode, 0), Acc.Currency, CASE WHEN accf.AccID IS NULL THEN 'No' ELSE 'Yes' END
+
+
+
+GO
+/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LocationFinancials](
+	[LocFinID] [bigint] IDENTITY(1,1) NOT NULL,
+	[LocID] [bigint] NOT NULL,
+	[PerilCode] [int] NOT NULL,
+	[DedCode] [tinyint] NOT NULL,
+	[DedCov] [tinyint] NOT NULL,
+	[DedType] [tinyint] NOT NULL,
+	[Ded] [float] NOT NULL,
+	[MinDed] [float] NOT NULL,
+	[MaxDed] [float] NOT NULL,
+	[BIWaitingPeriod] [smallint] NOT NULL,
+	[LimitCode] [tinyint] NOT NULL,
+	[LimitCov] [tinyint] NOT NULL,
+	[LimitType] [tinyint] NOT NULL,
+	[Limit] [float] NOT NULL,
+ CONSTRAINT [PK_LocationFinancials] PRIMARY KEY CLUSTERED 
+(
+	[LocFinID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Locations]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Locations](
+	[LocID] [bigint] IDENTITY(1,1) NOT NULL,
+	[AccID] [bigint] NOT NULL,
+	[LocNumber] [nvarchar](20) NOT NULL,
+	[LocName] [nvarchar](20) NULL,
+	[LocGroup] [nvarchar](20) NULL,
+	[CorrelationGroup] [int] NULL,
+	[IsPrimary] [bit] NOT NULL,
+	[IsTenant] [bit] NOT NULL,
+	[BuildingID] [varchar](20) NULL,
+	[LocInceptionDate] [smalldatetime] NULL,
+	[LocExpiryDate] [smalldatetime] NULL,
+	[PercentComplete] [decimal](7, 6) NOT NULL,
+	[CompletionDate] [date] NULL,
+	[CountryCode] [char](2) NOT NULL,
+	[Latitude] [decimal](12, 8) NOT NULL,
+	[Longitude] [decimal](12, 8) NOT NULL,
+	[StreetAddress] [nvarchar](100) NULL,
+	[PostalCode] [nvarchar](20) NULL,
+	[City] [nvarchar](50) NULL,
+	[AreaCode] [nvarchar](20) NULL,
+	[AreaName] [nvarchar](50) NULL,
+	[GeogScheme1] [varchar](5) NULL,
+	[GeogName1] [nvarchar](50) NULL,
+	[GeogScheme2] [varchar](5) NULL,
+	[GeogName2] [nvarchar](50) NULL,
+	[GeogScheme3] [varchar](5) NULL,
+	[GeogName3] [nvarchar](50) NULL,
+	[GeogScheme4] [varchar](5) NULL,
+	[GeogName4] [nvarchar](50) NULL,
+	[GeogScheme5] [varchar](5) NULL,
+	[GeogName5] [nvarchar](50) NULL,
+	[AddressMatch] [tinyint] NOT NULL,
+	[GeocodeQuality] [float] NULL,
+	[Geocoder] [varchar](20) NULL,
+	[OrgOccupancyScheme] [varchar](10) NULL,
+	[OrgOccupancyCode] [varchar](100) NULL,
+	[OrgConstructionScheme] [varchar](10) NULL,
+	[OrgConstructionCode] [varchar](100) NULL,
+	[OccupancyCode] [smallint] NOT NULL,
+	[ConstructionCode] [smallint] NOT NULL,
+	[YearBuilt] [smallint] NOT NULL,
+	[NumberOfStoreys] [tinyint] NOT NULL,
+	[NumberOfBuildings] [int] NOT NULL,
+	[FloorArea] [float] NOT NULL,
+	[FloorAreaUnit] [tinyint] NOT NULL,
+	[LocUserDef1] [varchar](20) NULL,
+	[LocUserDef2] [varchar](20) NULL,
+	[LocUserDef3] [varchar](20) NULL,
+	[LocUserDef4] [varchar](20) NULL,
+	[LocUserDef5] [varchar](20) NULL,
+	[PerilsCovered] [int] NOT NULL,
+	[BuildingTIV] [float] NOT NULL,
+	[OtherTIV] [float] NOT NULL,
+	[ContentsTIV] [float] NOT NULL,
+	[BITIV] [float] NOT NULL,
+	[BIPOI] [float] NOT NULL,
+	[Currency] [varchar](3) NOT NULL,
+	[GrossPremium] [float] NOT NULL,
+	[Tax] [float] NOT NULL,
+	[Brokerage] [float] NOT NULL,
+	[NetPremium] [float] NOT NULL,
+	[NonCatGroundUpLoss] [float] NOT NULL,
+	[Participation] [float] NOT NULL,
+	[PayoutBasis] [tinyint] NOT NULL,
+	[ReinsTag] [varchar](20) NULL,
+ CONSTRAINT [PK_Locations] PRIMARY KEY CLUSTERED 
+(
+	[LocID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[vLocationFinancials]
+AS
+SELECT        loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered) as PerilCode, Loc.Currency, 
+	CASE WHEN locf.LocID IS NULL THEN 'No' ELSE 'Yes' END as DedOrLimExists,
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS LocDedCode1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS LocDedType1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS LocDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS LocMinDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS LocDedCode2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS LocDedType2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS LocDed2Other, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS LocMinDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS LocDedCode3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS LocDedType3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS LocDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS LocMinDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS LocDedCode4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS LocDedType4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS LocDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS LocMinDed4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS LocDedCode5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS LocDedType5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS LocDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS LocMinDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS LocDedCode6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS LocDedType6All, 
+    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS LocDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS LocMinDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed6All,
+	ISNULL(MAX(BIWaitingPeriod), 0) AS BIWaitingPeriod,
+    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode1Building,
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS LocLimitType1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS LocLimit1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS LocLimitType2Other, 
+    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS LocLimit2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS LocLimitType3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS LocLimit3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode4BI, 
+    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS LocLimitType4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS LocLimit4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS LocLimitType5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS LocLimit5PD, 
+    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS LocLimitType6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS LocLimit6All
+FROM  Locations loc LEFT JOIN LocationFinancials locf
+	ON loc.LocID = locf.LocID
+GROUP BY loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered), loc.Currency, 
+	CASE WHEN locf.LocID IS NULL THEN 'No' ELSE 'Yes' END
+
+
+
+GO
+/****** Object:  View [dbo].[vLocCond]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[vLocCond]
+AS
+SELECT distinct LocID, CondID
+FROM LocCond
+
+
+
+
+GO
+/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PolicyFinancials](
+	[PolFinID] [bigint] IDENTITY(1,1) NOT NULL,
+	[PolID] [bigint] NOT NULL,
+	[PerilCode] [int] NOT NULL,
+	[DedCode] [tinyint] NOT NULL,
+	[DedCov] [tinyint] NOT NULL,
+	[DedType] [tinyint] NOT NULL,
+	[Ded] [float] NOT NULL,
+	[MinDed] [float] NOT NULL,
+	[MaxDed] [float] NOT NULL,
+	[LimitCode] [tinyint] NOT NULL,
+	[LimitCov] [tinyint] NOT NULL,
+	[LimitType] [tinyint] NOT NULL,
+	[Limit] [float] NOT NULL,
+ CONSTRAINT [PK_PolicyFinancials] PRIMARY KEY CLUSTERED 
+(
+	[PolFinID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[vPolicyFinancials]
+AS
+SELECT        pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered) as PerilCode, Acc.Currency, 
+	CASE WHEN polf.PolID IS NULL THEN 'No' ELSE 'Yes' END AS DedOrLimExists,
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS PolDedCode1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS PolDedType1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS PolDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS PolMinDed1Building, 
+	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed1Building, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS PolDedCode2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS PolDedType2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS PolDed2Other, 
+    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS PolMinDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed2Other, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS PolDedCode3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS PolDedType3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS PolDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS PolMinDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed3Contents, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS PolDedCode4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS PolDedType4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS PolDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS PolMinDed4BI, 
+    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed4BI, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS PolDedCode5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS PolDedType5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS PolDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS PolMinDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed5PD, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS PolDedCode6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS PolDedType6All, 
+    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS PolDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS PolMinDed6All, 
+	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed6All, 
+    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode1Building,
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS PolLimitType1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS PolLimit1Building, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS PolLimitType2Other, 
+    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS PolLimit2Other, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS PolLimitType3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS PolLimit3Contents, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode4BI, 
+    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS PolLimitType4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS PolLimit4BI, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS PolLimitType5PD, 
+	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS PolLimit5PD, 
+    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS PolLimitType6All, 
+	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS PolLimit6All
+FROM  Accounts acc INNER JOIN Policies pol 
+	ON acc.AccID = pol.AccID 
+		LEFT JOIN  dbo.PolicyFinancials polf
+	ON pol.PolID = polf.PolID
+GROUP BY pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered), Acc.Currency, 
+	CASE WHEN polf.PolID IS NULL THEN 'No' ELSE 'Yes' END
+
+
+
+GO
+/****** Object:  Table [dbo].[Steps]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Steps](
+	[StepID] [bigint] IDENTITY(1,1) NOT NULL,
+	[StepFuncID] [bigint] NOT NULL,
+	[StepNumber] [tinyint] NOT NULL,
+	[PayoutType] [tinyint] NOT NULL,
+	[TriggerType] [tinyint] NOT NULL,
+	[StepTriggerCov] [tinyint] NOT NULL,
+	[TriggerStart] [float] NOT NULL,
+	[TriggerEnd] [float] NOT NULL,
+	[PayoutStart] [float] NOT NULL,
+	[PayoutEnd] [float] NOT NULL,
+	[Deductible] [float] NOT NULL,
+	[PayoutLimit] [float] NOT NULL,
+	[ExtraExpenseFactor] [float] NOT NULL,
+	[ExtraExpenseLimit] [float] NOT NULL,
+	[DebrisRemovalFactor] [float] NOT NULL,
+	[MinimumTIV] [float] NOT NULL,
+	[ScaleFactor] [float] NOT NULL,
+	[IsLimitAtDamage] [bit] NOT NULL,
+ CONSTRAINT [PK_Steps] PRIMARY KEY CLUSTERED 
+(
+	[StepID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StepFunctions]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StepFunctions](
+	[StepFuncID] [bigint] IDENTITY(1,1) NOT NULL,
+	[PolID] [bigint] NOT NULL,
+	[StepFunctionName] [varchar](30) NOT NULL,
+	[StepTriggerType] [tinyint] NOT NULL,
+	[PerilCode] [int] NOT NULL,
+ CONSTRAINT [PK_StepFunctions] PRIMARY KEY CLUSTERED 
+(
+	[StepFuncID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  View [dbo].[vStepFunctions]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE VIEW [dbo].[vStepFunctions]
+AS
+SELECT        sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerBuildingStart, 
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerBuildingEnd, 
+    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
+		AS DeductibleBuilding,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayoutBuildingStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayoutBuildingEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitBuilding,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerContentsStart, 
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerContentsEnd, 
+    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
+		AS DeductibleContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayOutContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayOutContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerStart ELSE 0 END), 0) 
+		AS TriggerBuildingContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerEnd ELSE 0 END), 0) 
+		AS TriggerBuildingContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN Deductible ELSE 0 END), 0) 
+		AS DeductibleBuildingContents,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutStart ELSE 0 END), 0) 
+		AS PayOutBuildingContentsStart,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutEnd ELSE 0 END), 0) 
+		AS PayOutBuildingContentsEnd,
+	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutLimit ELSE 0 END), 0) 
+		AS PayOutLimitBuildingContents,
+	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
+FROM  StepFunctions sf INNER JOIN Policies pol
+	ON sf.PolID = pol.PolID INNER JOIN Steps s
+	ON sf.StepFuncID = s.StepFuncID
+GROUP BY sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
+	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
+
+
+
+
+GO
+/****** Object:  Table [dbo].[Cedants]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cedants](
+	[CedantID] [bigint] IDENTITY(1,1) NOT NULL,
+	[CedantName] [varchar](40) NOT NULL,
+ CONSTRAINT [PK_Cedants] PRIMARY KEY CLUSTERED 
+(
+	[CedantID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FlexiAcc]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[FlexiAcc](
 	[FlexiAccID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -273,16 +863,11 @@ CREATE TABLE [dbo].[FlexiAcc](
 	[FlexiAccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[FlexiLoc]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[FlexiLoc](
 	[FlexiLocID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -294,16 +879,11 @@ CREATE TABLE [dbo].[FlexiLoc](
 	[FlexiLocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[FlexiPol]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[FlexiPol]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[FlexiPol](
 	[FlexiPolID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -315,16 +895,11 @@ CREATE TABLE [dbo].[FlexiPol](
 	[FlexiPolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[LOB]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[LOB]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[LOB](
 	[LOBID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -334,16 +909,11 @@ CREATE TABLE [dbo].[LOB](
 	[LOBID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[LocationDetails]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[LocationDetails]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[LocationDetails](
 	[LocID] [bigint] NOT NULL,
@@ -437,138 +1007,8 @@ CREATE TABLE [dbo].[LocationDetails](
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[LocationFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[LocationFinancials](
-	[LocFinID] [bigint] IDENTITY(1,1) NOT NULL,
-	[LocID] [bigint] NOT NULL,
-	[PerilCode] [int] NOT NULL,
-	[DedCode] [tinyint] NOT NULL,
-	[DedCov] [tinyint] NOT NULL,
-	[DedType] [tinyint] NOT NULL,
-	[Ded] [float] NOT NULL,
-	[MinDed] [float] NOT NULL,
-	[MaxDed] [float] NOT NULL,
-	[BIWaitingPeriod] [smallint] NOT NULL,
-	[LimitCode] [tinyint] NOT NULL,
-	[LimitCov] [tinyint] NOT NULL,
-	[LimitType] [tinyint] NOT NULL,
-	[Limit] [float] NOT NULL,
- CONSTRAINT [PK_LocationFinancials] PRIMARY KEY CLUSTERED 
-(
-	[LocFinID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Locations]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Locations](
-	[LocID] [bigint] IDENTITY(1,1) NOT NULL,
-	[AccID] [bigint] NOT NULL,
-	[LocNumber] [nvarchar](20) NOT NULL,
-	[LocName] [nvarchar](20) NULL,
-	[LocGroup] [nvarchar](20) NULL,
-	[CorrelationGroup] [int] NULL,
-	[IsPrimary] [bit] NOT NULL,
-	[IsTenant] [bit] NOT NULL,
-	[BuildingID] [varchar](20) NULL,
-	[LocInceptionDate] [smalldatetime] NULL,
-	[LocExpiryDate] [smalldatetime] NULL,
-	[PercentComplete] [decimal](7, 6) NOT NULL,
-	[CompletionDate] [date] NULL,
-	[CountryCode] [char](2) NOT NULL,
-	[Latitude] [decimal](12, 8) NOT NULL,
-	[Longitude] [decimal](12, 8) NOT NULL,
-	[StreetAddress] [nvarchar](100) NULL,
-	[PostalCode] [nvarchar](20) NULL,
-	[City] [nvarchar](50) NULL,
-	[AreaCode] [nvarchar](20) NULL,
-	[AreaName] [nvarchar](50) NULL,
-	[GeogScheme1] [varchar](5) NULL,
-	[GeogName1] [nvarchar](50) NULL,
-	[GeogScheme2] [varchar](5) NULL,
-	[GeogName2] [nvarchar](50) NULL,
-	[GeogScheme3] [varchar](5) NULL,
-	[GeogName3] [nvarchar](50) NULL,
-	[GeogScheme4] [varchar](5) NULL,
-	[GeogName4] [nvarchar](50) NULL,
-	[GeogScheme5] [varchar](5) NULL,
-	[GeogName5] [nvarchar](50) NULL,
-	[AddressMatch] [tinyint] NOT NULL,
-	[GeocodeQuality] [float] NULL,
-	[Geocoder] [varchar](20) NULL,
-	[OrgOccupancyScheme] [varchar](10) NULL,
-	[OrgOccupancyCode] [varchar](100) NULL,
-	[OrgConstructionScheme] [varchar](10) NULL,
-	[OrgConstructionCode] [varchar](100) NULL,
-	[OccupancyCode] [smallint] NOT NULL,
-	[ConstructionCode] [smallint] NOT NULL,
-	[YearBuilt] [smallint] NOT NULL,
-	[NumberOfStoreys] [tinyint] NOT NULL,
-	[NumberOfBuildings] [int] NOT NULL,
-	[FloorArea] [float] NOT NULL,
-	[FloorAreaUnit] [tinyint] NOT NULL,
-	[LocUserDef1] [varchar](20) NULL,
-	[LocUserDef2] [varchar](20) NULL,
-	[LocUserDef3] [varchar](20) NULL,
-	[LocUserDef4] [varchar](20) NULL,
-	[LocUserDef5] [varchar](20) NULL,
-	[PerilsCovered] [int] NOT NULL,
-	[BuildingTIV] [float] NOT NULL,
-	[OtherTIV] [float] NOT NULL,
-	[ContentsTIV] [float] NOT NULL,
-	[BITIV] [float] NOT NULL,
-	[BIPOI] [float] NOT NULL,
-	[Currency] [varchar](3) NOT NULL,
-	[GrossPremium] [float] NOT NULL,
-	[Tax] [float] NOT NULL,
-	[Brokerage] [float] NOT NULL,
-	[NetPremium] [float] NOT NULL,
-	[NonCatGroundUpLoss] [float] NOT NULL,
-	[Participation] [float] NOT NULL,
-	[PayoutBasis] [tinyint] NOT NULL,
-	[ReinsTag] [varchar](20) NULL,
- CONSTRAINT [PK_Locations] PRIMARY KEY CLUSTERED 
-(
-	[LocID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[LocCond]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[LocCond](
-	[PolID] [bigint] NOT NULL,
-	[LocID] [bigint] NOT NULL,
-	[CondID] [bigint] NOT NULL,
- CONSTRAINT [PK_LocCond] PRIMARY KEY CLUSTERED 
-(
-	[PolID] ASC,
-	[LocID] ASC,
-	[CondID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[LocPol]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[LocPol]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -583,79 +1023,8 @@ CREATE TABLE [dbo].[LocPol](
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[Policies]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Policies](
-	[PolID] [bigint] IDENTITY(1,1) NOT NULL,
-	[AccID] [bigint] NOT NULL,
-	[PolNumber] [varchar](20) NOT NULL,
-	[PolStatus] [char](1) NOT NULL,
-	[LayerNumber] [int] NOT NULL,
-	[InceptionDate] [smalldatetime] NULL,
-	[ExpiryDate] [smalldatetime] NULL,
-	[ProducerID] [bigint] NULL,
-	[Underwriter] [varchar](40) NULL,
-	[BranchName] [varchar](20) NULL,
-	[LOBID] [bigint] NULL,
-	[ExpiringPolNumber] [varchar](20) NULL,
-	[PerilsCovered] [int] NOT NULL,
-	[GrossPremium] [float] NOT NULL,
-	[Tax] [float] NOT NULL,
-	[Brokerage] [float] NOT NULL,
-	[NetPremium] [float] NOT NULL,
-	[LayerParticipation] [float] NOT NULL,
-	[LayerLimit] [float] NOT NULL,
-	[LayerAttachment] [float] NOT NULL,
-	[Currency] [varchar](3) NOT NULL,
-	[HoursClause] [int] NULL,
-	[PolUserDef1] [varchar](20) NULL,
-	[PolUserDef2] [varchar](20) NULL,
-	[PolUserDef3] [varchar](20) NULL,
-	[PolUserDef4] [varchar](20) NULL,
-	[PolUserDef5] [varchar](20) NULL,
- CONSTRAINT [PK_Layers] PRIMARY KEY CLUSTERED 
-(
-	[PolID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[PolicyFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[PolicyFinancials](
-	[PolFinID] [bigint] IDENTITY(1,1) NOT NULL,
-	[PolID] [bigint] NOT NULL,
-	[PerilCode] [int] NOT NULL,
-	[DedCode] [tinyint] NOT NULL,
-	[DedCov] [tinyint] NOT NULL,
-	[DedType] [tinyint] NOT NULL,
-	[Ded] [float] NOT NULL,
-	[MinDed] [float] NOT NULL,
-	[MaxDed] [float] NOT NULL,
-	[LimitCode] [tinyint] NOT NULL,
-	[LimitCov] [tinyint] NOT NULL,
-	[LimitType] [tinyint] NOT NULL,
-	[Limit] [float] NOT NULL,
- CONSTRAINT [PK_PolicyFinancials] PRIMARY KEY CLUSTERED 
-(
-	[PolFinID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[PortAcc]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[PortAcc]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -669,14 +1038,11 @@ CREATE TABLE [dbo].[PortAcc](
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[Portfolios]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[Portfolios]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Portfolios](
 	[PortID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -690,16 +1056,11 @@ CREATE TABLE [dbo].[Portfolios](
 	[PortID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[Producers]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[Producers]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Producers](
 	[ProducerID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -709,11 +1070,8 @@ CREATE TABLE [dbo].[Producers](
 	[ProducerID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsAcc]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -728,9 +1086,8 @@ CREATE TABLE [dbo].[ReinsAcc](
 	[ReinsAccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsLoc]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -747,9 +1104,8 @@ CREATE TABLE [dbo].[ReinsLoc](
 	[ReinsLocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[ReinsPol]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsPol]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -764,9 +1120,8 @@ CREATE TABLE [dbo].[ReinsPol](
 	[ReinsPolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[ReinsPort]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsPort]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -781,9 +1136,8 @@ CREATE TABLE [dbo].[ReinsPort](
 	[ReinsPortID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsReinstatements]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -798,14 +1152,11 @@ CREATE TABLE [dbo].[ReinsReinstatements](
 	[ReinsReinstatID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsuranceInfo]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[ReinsuranceInfo](
 	[ReinsID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -842,16 +1193,11 @@ CREATE TABLE [dbo].[ReinsuranceInfo](
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[ReinsuranceScope]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[ReinsuranceScope](
 	[ReinsScopeID] [bigint] IDENTITY(1,1) NOT NULL,
@@ -873,64 +1219,8 @@ CREATE TABLE [dbo].[ReinsuranceScope](
 	[ReinsScopeID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[StepFunctions]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[StepFunctions](
-	[StepFuncID] [bigint] IDENTITY(1,1) NOT NULL,
-	[PolID] [bigint] NOT NULL,
-	[StepFunctionName] [varchar](30) NOT NULL,
-	[StepTriggerType] [tinyint] NOT NULL,
-	[PerilCode] [int] NOT NULL,
- CONSTRAINT [PK_StepFunctions] PRIMARY KEY CLUSTERED 
-(
-	[StepFuncID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[Steps]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Steps](
-	[StepID] [bigint] IDENTITY(1,1) NOT NULL,
-	[StepFuncID] [bigint] NOT NULL,
-	[StepNumber] [tinyint] NOT NULL,
-	[PayoutType] [tinyint] NOT NULL,
-	[TriggerType] [tinyint] NOT NULL,
-	[StepTriggerCov] [tinyint] NOT NULL,
-	[TriggerStart] [float] NOT NULL,
-	[TriggerEnd] [float] NOT NULL,
-	[PayoutStart] [float] NOT NULL,
-	[PayoutEnd] [float] NOT NULL,
-	[Deductible] [float] NOT NULL,
-	[PayoutLimit] [float] NOT NULL,
-	[ExtraExpenseFactor] [float] NOT NULL,
-	[ExtraExpenseLimit] [float] NOT NULL,
-	[DebrisRemovalFactor] [float] NOT NULL,
-	[MinimumTIV] [float] NOT NULL,
-	[ScaleFactor] [float] NOT NULL,
-	[IsLimitAtDamage] [float] NOT NULL,
- CONSTRAINT [PK_Steps] PRIMARY KEY CLUSTERED 
-(
-	[StepID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[WorkersComp]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[WorkersComp]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -945,14 +1235,11 @@ CREATE TABLE [dbo].[WorkersComp](
 	[WorkersCompID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xAddressMatch]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xAddressMatch](
 	[Code] [tinyint] NOT NULL,
@@ -962,16 +1249,11 @@ CREATE TABLE [dbo].[xAddressMatch](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xAppurtenantStructure]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xAppurtenantStructure](
 	[Code] [tinyint] NOT NULL,
@@ -981,16 +1263,11 @@ CREATE TABLE [dbo].[xAppurtenantStructure](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xAreaCode]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xAreaCode]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xAreaCode](
 	[CountryCode] [char](2) NOT NULL,
@@ -1003,16 +1280,11 @@ CREATE TABLE [dbo].[xAreaCode](
 	[AreaCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xAttachmentBasis]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xAttachmentBasis](
 	[Code] [char](2) NOT NULL,
@@ -1022,16 +1294,11 @@ CREATE TABLE [dbo].[xAttachmentBasis](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBasement]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBasement]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBasement](
 	[Code] [tinyint] NOT NULL,
@@ -1041,16 +1308,11 @@ CREATE TABLE [dbo].[xBasement](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBIPreparedness]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBIPreparedness](
 	[Code] [tinyint] NOT NULL,
@@ -1060,16 +1322,11 @@ CREATE TABLE [dbo].[xBIPreparedness](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBIRedundancy]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBIRedundancy](
 	[Code] [tinyint] NOT NULL,
@@ -1079,16 +1336,11 @@ CREATE TABLE [dbo].[xBIRedundancy](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBrickVeneer]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBrickVeneer](
 	[Code] [tinyint] NOT NULL,
@@ -1098,16 +1350,11 @@ CREATE TABLE [dbo].[xBrickVeneer](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBuildingCondition]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBuildingCondition](
 	[Code] [tinyint] NOT NULL,
@@ -1117,16 +1364,11 @@ CREATE TABLE [dbo].[xBuildingCondition](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBuildingExteriorOpening]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBuildingExteriorOpening](
 	[Code] [tinyint] NOT NULL,
@@ -1136,16 +1378,11 @@ CREATE TABLE [dbo].[xBuildingExteriorOpening](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBuildingShape]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBuildingShape](
 	[Code] [tinyint] NOT NULL,
@@ -1155,16 +1392,11 @@ CREATE TABLE [dbo].[xBuildingShape](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xBuildingType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xBuildingType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xBuildingType](
 	[Code] [tinyint] NOT NULL,
@@ -1174,16 +1406,11 @@ CREATE TABLE [dbo].[xBuildingType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xChimney]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xChimney]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xChimney](
 	[Code] [tinyint] NOT NULL,
@@ -1193,16 +1420,11 @@ CREATE TABLE [dbo].[xChimney](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCladding]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCladding]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCladding](
 	[Code] [tinyint] NOT NULL,
@@ -1212,16 +1434,11 @@ CREATE TABLE [dbo].[xCladding](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xConstruction]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xConstruction]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xConstruction](
 	[Code] [smallint] NOT NULL,
@@ -1235,16 +1452,11 @@ CREATE TABLE [dbo].[xConstruction](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xConstructionQuality]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xConstructionQuality](
 	[Code] [tinyint] NOT NULL,
@@ -1255,16 +1467,11 @@ CREATE TABLE [dbo].[xConstructionQuality](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xContentsFloodVuln]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xContentsFloodVuln](
 	[Code] [tinyint] NOT NULL,
@@ -1275,16 +1482,11 @@ CREATE TABLE [dbo].[xContentsFloodVuln](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xContentsQuakeVuln]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xContentsQuakeVuln](
 	[Code] [tinyint] NOT NULL,
@@ -1295,16 +1497,11 @@ CREATE TABLE [dbo].[xContentsQuakeVuln](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xContentsWindVuln]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xContentsWindVuln](
 	[Code] [tinyint] NOT NULL,
@@ -1315,32 +1512,22 @@ CREATE TABLE [dbo].[xContentsWindVuln](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCountryCodeComments]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCountryCodeComments]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCountryCodeComments](
 	[CountryCode] [char](2) NOT NULL,
 	[Non_ISO3166_code] [varchar](20) NOT NULL,
 	[Offshore] [varchar](100) NOT NULL
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCountryCodes]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCountryCodes](
 	[CountryCode] [char](2) NOT NULL,
@@ -1352,16 +1539,11 @@ CREATE TABLE [dbo].[xCountryCodes](
 	[CountryCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCoverages]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCoverages]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCoverages](
 	[Code] [tinyint] NOT NULL,
@@ -1372,16 +1554,11 @@ CREATE TABLE [dbo].[xCoverages](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCrippleWall]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCrippleWall](
 	[Code] [tinyint] NOT NULL,
@@ -1391,16 +1568,11 @@ CREATE TABLE [dbo].[xCrippleWall](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xCurrency]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xCurrency]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xCurrency](
 	[CurrencyCode] [varchar](3) NOT NULL,
@@ -1415,16 +1587,11 @@ CREATE TABLE [dbo].[xCurrency](
 	[CurrencyCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xDedCode]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xDedCode]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xDedCode](
 	[Code] [tinyint] NOT NULL,
@@ -1435,16 +1602,11 @@ CREATE TABLE [dbo].[xDedCode](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xDedType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xDedType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xDedType](
 	[Code] [tinyint] NOT NULL,
@@ -1455,11 +1617,8 @@ CREATE TABLE [dbo].[xDedType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xEQ]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xEQ]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1467,14 +1626,11 @@ GO
 CREATE TABLE [dbo].[xEQ](
 	[EQ] [bit] NOT NULL
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xEquipmentBracing]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xEquipmentBracing](
 	[Code] [tinyint] NOT NULL,
@@ -1484,16 +1640,11 @@ CREATE TABLE [dbo].[xEquipmentBracing](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xExternalDoors]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xExternalDoors](
 	[Code] [tinyint] NOT NULL,
@@ -1503,16 +1654,11 @@ CREATE TABLE [dbo].[xExternalDoors](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFatigue]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFatigue]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFatigue](
 	[Code] [tinyint] NOT NULL,
@@ -1522,16 +1668,11 @@ CREATE TABLE [dbo].[xFatigue](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFEMACompliance]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFEMACompliance](
 	[Code] [tinyint] NOT NULL,
@@ -1541,16 +1682,11 @@ CREATE TABLE [dbo].[xFEMACompliance](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFlashing]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFlashing]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFlashing](
 	[Code] [tinyint] NOT NULL,
@@ -1560,16 +1696,11 @@ CREATE TABLE [dbo].[xFlashing](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFloodDebrisResilience]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFloodDebrisResilience](
 	[Code] [tinyint] NOT NULL,
@@ -1579,16 +1710,11 @@ CREATE TABLE [dbo].[xFloodDebrisResilience](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFoundationConnection]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFoundationConnection](
 	[Code] [tinyint] NOT NULL,
@@ -1598,16 +1724,11 @@ CREATE TABLE [dbo].[xFoundationConnection](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFoundationType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFoundationType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFoundationType](
 	[Code] [tinyint] NOT NULL,
@@ -1617,16 +1738,11 @@ CREATE TABLE [dbo].[xFoundationType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xFXRates]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xFXRates]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xFXRates](
 	[CurrencyCode] [char](3) NOT NULL,
@@ -1635,11 +1751,8 @@ CREATE TABLE [dbo].[xFXRates](
 	[EnteredOn] [date] NOT NULL,
 	[UpdatedOn] [date] NOT NULL
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xGeogScheme]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1653,14 +1766,11 @@ CREATE TABLE [dbo].[xGeogScheme](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-/****** Object:  Table [dbo].[xGlassType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xGlassType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xGlassType](
 	[Code] [tinyint] NOT NULL,
@@ -1670,16 +1780,11 @@ CREATE TABLE [dbo].[xGlassType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xGroundEquipment]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xGroundEquipment](
 	[Code] [tinyint] NOT NULL,
@@ -1689,16 +1794,11 @@ CREATE TABLE [dbo].[xGroundEquipment](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xInternalPartition]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xInternalPartition](
 	[Code] [tinyint] NOT NULL,
@@ -1708,16 +1808,11 @@ CREATE TABLE [dbo].[xInternalPartition](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xLatticeType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xLatticeType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xLatticeType](
 	[Code] [tinyint] NOT NULL,
@@ -1727,16 +1822,11 @@ CREATE TABLE [dbo].[xLatticeType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xLimitCode]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xLimitCode]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xLimitCode](
 	[Code] [tinyint] NOT NULL,
@@ -1746,16 +1836,11 @@ CREATE TABLE [dbo].[xLimitCode](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xLimitType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xLimitType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xLimitType](
 	[Code] [tinyint] NOT NULL,
@@ -1766,16 +1851,11 @@ CREATE TABLE [dbo].[xLimitType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xMechanicalEquipmentSide]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xMechanicalEquipmentSide](
 	[Code] [tinyint] NOT NULL,
@@ -1785,16 +1865,11 @@ CREATE TABLE [dbo].[xMechanicalEquipmentSide](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xMultiStoryHall]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xMultiStoryHall](
 	[Code] [tinyint] NOT NULL,
@@ -1804,16 +1879,11 @@ CREATE TABLE [dbo].[xMultiStoryHall](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xOccupancy]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xOccupancy]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xOccupancy](
 	[Code] [smallint] NOT NULL,
@@ -1827,16 +1897,11 @@ CREATE TABLE [dbo].[xOccupancy](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xOrnamentation]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xOrnamentation](
 	[Code] [tinyint] NOT NULL,
@@ -1846,16 +1911,11 @@ CREATE TABLE [dbo].[xOrnamentation](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xPackaging]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xPackaging]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xPackaging](
 	[Code] [tinyint] NOT NULL,
@@ -1865,16 +1925,11 @@ CREATE TABLE [dbo].[xPackaging](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xPayoutBasis]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xPayoutBasis](
 	[Code] [tinyint] NOT NULL,
@@ -1885,16 +1940,22 @@ CREATE TABLE [dbo].[xPayoutBasis](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xPayOutType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
+CREATE TABLE [dbo].[xPayOutType](
+	[Code] [tinyint] NOT NULL,
+	[CodeDescription] [varchar](100) NOT NULL,
+	[Notes] [varchar](200) NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[xPerilCodeLookup]    Script Date: 09/04/2020 10:44:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[xPerilCodeLookup](
 	[PerilCode] [int] NOT NULL,
@@ -1929,16 +1990,11 @@ CREATE TABLE [dbo].[xPerilCodeLookup](
 	[PerilCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xPerilCodes]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xPerilCodes](
 	[PerilCode] [int] NOT NULL,
@@ -1950,16 +2006,11 @@ CREATE TABLE [dbo].[xPerilCodes](
 	[PerilCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xPounding]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xPounding]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xPounding](
 	[Code] [tinyint] NOT NULL,
@@ -1969,16 +2020,11 @@ CREATE TABLE [dbo].[xPounding](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xProtection]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xProtection]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xProtection](
 	[Code] [tinyint] NOT NULL,
@@ -1988,16 +2034,11 @@ CREATE TABLE [dbo].[xProtection](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRedundancy]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRedundancy]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRedundancy](
 	[Code] [tinyint] NOT NULL,
@@ -2007,16 +2048,11 @@ CREATE TABLE [dbo].[xRedundancy](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xReinsType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xReinsType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xReinsType](
 	[Code] [varchar](3) NOT NULL,
@@ -2026,16 +2062,11 @@ CREATE TABLE [dbo].[xReinsType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRetrofit]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRetrofit]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRetrofit](
 	[Code] [tinyint] NOT NULL,
@@ -2045,16 +2076,11 @@ CREATE TABLE [dbo].[xRetrofit](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRiskLevel]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRiskLevel](
 	[Code] [tinyint] NOT NULL,
@@ -2065,16 +2091,11 @@ CREATE TABLE [dbo].[xRiskLevel](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofAnchorage]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofAnchorage](
 	[Code] [tinyint] NOT NULL,
@@ -2084,16 +2105,11 @@ CREATE TABLE [dbo].[xRoofAnchorage](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofAttachedStructures]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofAttachedStructures](
 	[Code] [tinyint] NOT NULL,
@@ -2103,16 +2119,11 @@ CREATE TABLE [dbo].[xRoofAttachedStructures](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofCover]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofCover]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofCover](
 	[Code] [tinyint] NOT NULL,
@@ -2122,16 +2133,11 @@ CREATE TABLE [dbo].[xRoofCover](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofCoverAttachment]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofCoverAttachment](
 	[Code] [tinyint] NOT NULL,
@@ -2141,16 +2147,11 @@ CREATE TABLE [dbo].[xRoofCoverAttachment](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofDeck]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofDeck](
 	[Code] [tinyint] NOT NULL,
@@ -2160,16 +2161,11 @@ CREATE TABLE [dbo].[xRoofDeck](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofDeckAttachment]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofDeckAttachment](
 	[Code] [tinyint] NOT NULL,
@@ -2179,16 +2175,11 @@ CREATE TABLE [dbo].[xRoofDeckAttachment](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofEquipment]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofEquipment](
 	[Code] [tinyint] NOT NULL,
@@ -2198,16 +2189,11 @@ CREATE TABLE [dbo].[xRoofEquipment](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofFrame]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofFrame](
 	[Code] [tinyint] NOT NULL,
@@ -2217,16 +2203,11 @@ CREATE TABLE [dbo].[xRoofFrame](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofGeometry]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofGeometry](
 	[Code] [tinyint] NOT NULL,
@@ -2236,16 +2217,11 @@ CREATE TABLE [dbo].[xRoofGeometry](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofMaintenance]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofMaintenance](
 	[Code] [tinyint] NOT NULL,
@@ -2255,16 +2231,11 @@ CREATE TABLE [dbo].[xRoofMaintenance](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xRoofPitch]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xRoofPitch](
 	[Code] [tinyint] NOT NULL,
@@ -2274,16 +2245,11 @@ CREATE TABLE [dbo].[xRoofPitch](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xSalvageProtection]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xSalvageProtection](
 	[Code] [tinyint] NOT NULL,
@@ -2293,16 +2259,11 @@ CREATE TABLE [dbo].[xSalvageProtection](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xServiceEquipmentProtection]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xServiceEquipmentProtection](
 	[Code] [tinyint] NOT NULL,
@@ -2312,16 +2273,11 @@ CREATE TABLE [dbo].[xServiceEquipmentProtection](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xShapeIrregularity]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xShapeIrregularity](
 	[Code] [tinyint] NOT NULL,
@@ -2332,16 +2288,11 @@ CREATE TABLE [dbo].[xShapeIrregularity](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xShortColumn]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xShortColumn]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xShortColumn](
 	[Code] [tinyint] NOT NULL,
@@ -2351,16 +2302,11 @@ CREATE TABLE [dbo].[xShortColumn](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xSmallDebris]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xSmallDebris](
 	[Code] [tinyint] NOT NULL,
@@ -2370,16 +2316,11 @@ CREATE TABLE [dbo].[xSmallDebris](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xSoftStory]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xSoftStory]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xSoftStory](
 	[Code] [tinyint] NOT NULL,
@@ -2389,16 +2330,11 @@ CREATE TABLE [dbo].[xSoftStory](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xSpecialEQConstruction]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xSpecialEQConstruction](
 	[Code] [tinyint] NOT NULL,
@@ -2408,16 +2344,11 @@ CREATE TABLE [dbo].[xSpecialEQConstruction](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xSprinklerType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xSprinklerType](
 	[Code] [tinyint] NOT NULL,
@@ -2427,31 +2358,21 @@ CREATE TABLE [dbo].[xSprinklerType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xStatuses]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xStatuses]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xStatuses](
 	[Code] [char](1) NOT NULL,
 	[CodeDescription] [nvarchar](50) NOT NULL
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xStepTriggerType]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xStepTriggerType](
 	[Code] [tinyint] NOT NULL,
@@ -2461,16 +2382,11 @@ CREATE TABLE [dbo].[xStepTriggerType](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xTallOneStory]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xTallOneStory](
 	[Code] [tinyint] NOT NULL,
@@ -2480,16 +2396,11 @@ CREATE TABLE [dbo].[xTallOneStory](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xTank]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xTank]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xTank](
 	[Code] [tinyint] NOT NULL,
@@ -2499,16 +2410,11 @@ CREATE TABLE [dbo].[xTank](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xTerrainRoughness]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xTerrainRoughness](
 	[Code] [tinyint] NOT NULL,
@@ -2519,16 +2425,11 @@ CREATE TABLE [dbo].[xTerrainRoughness](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xTorsion]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xTorsion]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xTorsion](
 	[Code] [tinyint] NOT NULL,
@@ -2538,16 +2439,11 @@ CREATE TABLE [dbo].[xTorsion](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xTreeExposure]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xTreeExposure](
 	[Code] [tinyint] NOT NULL,
@@ -2557,16 +2453,11 @@ CREATE TABLE [dbo].[xTreeExposure](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xUnits]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xUnits]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xUnits](
 	[Code] [tinyint] NOT NULL,
@@ -2576,16 +2467,11 @@ CREATE TABLE [dbo].[xUnits](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xValuablesStorage]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xValuablesStorage](
 	[Code] [tinyint] NOT NULL,
@@ -2595,16 +2481,11 @@ CREATE TABLE [dbo].[xValuablesStorage](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xWallAttachedStructure]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xWallAttachedStructure](
 	[Code] [tinyint] NOT NULL,
@@ -2614,16 +2495,11 @@ CREATE TABLE [dbo].[xWallAttachedStructure](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[xWindowProtection]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[xWindowProtection](
 	[Code] [tinyint] NOT NULL,
@@ -2633,11 +2509,8 @@ CREATE TABLE [dbo].[xWindowProtection](
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[zNotes]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Table [dbo].[zNotes]    Script Date: 09/04/2020 10:44:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2646,585 +2519,196 @@ CREATE TABLE [dbo].[zNotes](
 	[ShortDescription] [nvarchar](50) NULL,
 	[Notes] [nvarchar](max) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
 GO
-/****** Object:  View [dbo].[vConditionFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vConditionFinancials]
-AS
-SELECT        cond.CondID, ISNULL(condf.PerilCode, 0) as PerilCode, cond.Currency, 
-	CASE WHEN condf.CondID IS NULL THEN 'No' ELSE 'Yes' END AS CondDedOrLimExists,
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS CondDedCode1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS CondDedType1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS CondDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS CondMinDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS CondDedCode2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS CondDedType2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS CondDed2Other, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS CondMinDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS CondDedCode3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS CondDedType3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS CondDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS CondMinDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS CondDedCode4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS CondDedType4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS CondDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS CondMinDed4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS CondDedCode5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS CondDedType5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS CondDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS CondMinDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS CondDedCode6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS CondDedType6All, 
-    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS CondDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS CondMinDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS CondMaxDed6All, 
-    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode1Building,
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS CondLimitType1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS CondLimit1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS CondLimitType2Other, 
-    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS CondLimit2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS CondLimitType3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS CondLimit3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode4BI, 
-    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS CondLimitType4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS CondLimit4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS CondLimitType5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS CondLimit5PD, 
-    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS CondLimitCode6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS CondLimitType6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS CondLimit6All
-FROM  Conditions Cond LEFT JOIN  dbo.ConditionFinancials condf
-	ON cond.CondID = condf.CondID
-GROUP BY cond.CondID, ISNULL(condf.PerilCode, 0), Cond.Currency, 
-	CASE WHEN Condf.CondID IS NULL THEN 'No' ELSE 'Yes' END
-
-
-
-GO
-/****** Object:  View [dbo].[vCondPerPolicy]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vCondPerPolicy]
-AS
-SELECT distinct pol.PolID, vcondf.PerilCode, cond.CondID, cond.CondNumber, cond.CondName,
-	vcondf.Currency, vcondf.CondDedOrLimExists, 
-	vcondf.CondDedCode1Building, vcondf.CondDedType1Building, vcondf.CondDed1Building, 
-	vcondf.CondMinDed1Building, vcondf.CondMaxDed1Building,
-	vcondf.CondDedCode2Other, vcondf.CondDedType2Other, vcondf.CondDed2Other, 
-	vcondf.CondMinDed2Other, vcondf.CondMaxDed2Other,
-	vcondf.CondDedCode3Contents, vcondf.CondDedType3Contents, vcondf.CondDed3Contents, 
-	vcondf.CondMinDed3Contents, vcondf.CondMaxDed3Contents,
-	vcondf.CondDedCode4BI, vcondf.CondDedType4BI, vcondf.CondDed4BI, vcondf.CondMinDed4BI, vcondf.CondMaxDed4BI,
-	vcondf.CondDedCode5PD, vcondf.CondDedType5PD, vcondf.CondDed5PD, vcondf.CondMinDed5PD, vcondf.CondMaxDed5PD,
-	vcondf.CondDedCode6All, vcondf.CondDedType6All, vcondf.CondDed6All, vcondf.CondMinDed6All, vcondf.CondMaxDed6All,
-	vcondf.CondLimitCode1Building, vcondf.CondLimitType1Building, vcondf.CondLimit1Building, 
-	vcondf.CondLimitCode2Other, vcondf.CondLimitType2Other, vcondf.CondLimit2Other,
-	vcondf.CondLimitCode3Contents, vcondf.CondLimitType3Contents, vcondf.CondLimit3Contents, 
-	vcondf.CondLimitCode4BI, vcondf.CondLimitType4BI, vcondf.CondLimit4BI,
-	vcondf.CondLimitCode5PD, vcondf.CondLimitType5PD, vcondf.CondLimit5PD, 
-	vcondf.CondLimitCode6All, vcondf.CondLimitType6All, vcondf.CondLimit6All
-FROM Accounts acc INNER JOIN Policies pol 
-	ON acc.AccID = pol.AccID
-		INNER JOIN Conditions cond 
-	ON acc.AccID = cond.AccID
-		INNER JOIN vConditionFinancials vcondf
-	ON cond.CondID = vcondf.CondID
-		INNER JOIN LocCond lc
-	ON cond.CondID = lc.CondID and pol.PolID = lc.PolID
-
-
-
-GO
-/****** Object:  View [dbo].[vAccountFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vAccountFinancials]
-AS
-SELECT        acc.AccID, ISNULL(PerilCode, 0) AS PerilCode, Acc.Currency, 
-	CASE WHEN accf.AccID IS NULL THEN 'No' ELSE 'Yes' END AS DedOrLimExists,
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS AccDedCode1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS AccDedType1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS AccDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS AccMinDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS AccDedCode2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS AccDedType2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS AccDed2Other, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS AccMinDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS AccDedCode3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS AccDedType3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS AccDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS AccMinDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS AccDedCode4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS AccDedType4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS AccDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS AccMinDed4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS AccDedCode5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS AccDedType5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS AccDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS AccMinDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS AccDedCode6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS AccDedType6All, 
-    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS AccDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS AccMinDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS AccMaxDed6All, 
-    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode1Building,
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS AccLimitType1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS AccLimit1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS AccLimitType2Other, 
-    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS AccLimit2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS AccLimitType3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS AccLimit3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode4BI, 
-    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS AccLimitType4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS AccLimit4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS AccLimitType5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS AccLimit5PD, 
-    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS AccLimitCode6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS AccLimitType6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS AccLimit6All
-FROM  Accounts acc LEFT JOIN  dbo.AccountFinancials accf
-	ON acc.AccID = accf.AccID
-GROUP BY acc.AccID, ISNULL(PerilCode, 0), Acc.Currency, CASE WHEN accf.AccID IS NULL THEN 'No' ELSE 'Yes' END
-
-
-
-GO
-/****** Object:  View [dbo].[vLocationFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vLocationFinancials]
-AS
-SELECT        loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered) as PerilCode, Loc.Currency, 
-	CASE WHEN locf.LocID IS NULL THEN 'No' ELSE 'Yes' END as DedOrLimExists,
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS LocDedCode1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS LocDedType1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS LocDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS LocMinDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS LocDedCode2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS LocDedType2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS LocDed2Other, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS LocMinDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS LocDedCode3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS LocDedType3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS LocDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS LocMinDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS LocDedCode4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS LocDedType4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS LocDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS LocMinDed4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS LocDedCode5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS LocDedType5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS LocDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS LocMinDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS LocDedCode6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS LocDedType6All, 
-    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS LocDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS LocMinDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS LocMaxDed6All,
-	ISNULL(MAX(BIWaitingPeriod), 0) AS BIWaitingPeriod,
-    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode1Building,
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS LocLimitType1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS LocLimit1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS LocLimitType2Other, 
-    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS LocLimit2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS LocLimitType3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS LocLimit3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode4BI, 
-    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS LocLimitType4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS LocLimit4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS LocLimitType5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS LocLimit5PD, 
-    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS LocLimitCode6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS LocLimitType6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS LocLimit6All
-FROM  Locations loc LEFT JOIN LocationFinancials locf
-	ON loc.LocID = locf.LocID
-GROUP BY loc.LocID, ISNULL(locf.PerilCode, loc.PerilsCovered), loc.Currency, 
-	CASE WHEN locf.LocID IS NULL THEN 'No' ELSE 'Yes' END
-
-
-
-GO
-/****** Object:  View [dbo].[vLocCond]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vLocCond]
-AS
-SELECT distinct LocID, CondID
-FROM LocCond
-
-
-
-
-GO
-/****** Object:  View [dbo].[vPolicyFinancials]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE VIEW [dbo].[vPolicyFinancials]
-AS
-SELECT        pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered) as PerilCode, Acc.Currency, 
-	CASE WHEN polf.PolID IS NULL THEN 'No' ELSE 'Yes' END AS DedOrLimExists,
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedCode ELSE 0 END), 0) AS PolDedCode1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN DedType ELSE 0 END), 0) AS PolDedType1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 1 THEN Ded ELSE 0 END), 0) AS PolDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MinDed ELSE 0 END), 0) AS PolMinDed1Building, 
-	ISNULL(SUM(CASE DedCov WHEN 1 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed1Building, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN DedCode ELSE 0 END), 0) AS PolDedCode2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN DedType ELSE 0 END), 0) AS PolDedType2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN Ded ELSE 0 END), 0) AS PolDed2Other, 
-    ISNULL(SUM(CASE DedCov WHEN 2 THEN MinDed ELSE 0 END), 0) AS PolMinDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 2 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed2Other, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedCode ELSE 0 END), 0) AS PolDedCode3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN DedType ELSE 0 END), 0) AS PolDedType3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN Ded ELSE 0 END), 0) AS PolDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MinDed ELSE 0 END), 0) AS PolMinDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 3 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed3Contents, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN DedCode ELSE 0 END), 0) AS PolDedCode4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN DedType ELSE 0 END), 0) AS PolDedType4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN Ded ELSE 0 END), 0) AS PolDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 4 THEN MinDed ELSE 0 END), 0) AS PolMinDed4BI, 
-    ISNULL(SUM(CASE DedCov WHEN 4 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed4BI, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedCode ELSE 0 END), 0) AS PolDedCode5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN DedType ELSE 0 END), 0) AS PolDedType5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN Ded ELSE 0 END), 0) AS PolDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MinDed ELSE 0 END), 0) AS PolMinDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 5 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed5PD, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedCode ELSE 0 END), 0) AS PolDedCode6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN DedType ELSE 0 END), 0) AS PolDedType6All, 
-    ISNULL(SUM(CASE DedCov WHEN 6 THEN Ded ELSE 0 END), 0) AS PolDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MinDed ELSE 0 END), 0) AS PolMinDed6All, 
-	ISNULL(SUM(CASE DedCov WHEN 6 THEN MaxDed ELSE 0 END), 0) AS PolMaxDed6All, 
-    ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode1Building,
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN LimitType ELSE 0 END), 0) AS PolLimitType1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 1 THEN Limit ELSE 0 END), 0) AS PolLimit1Building, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 2 THEN LimitType ELSE 0 END), 0) AS PolLimitType2Other, 
-    ISNULL(SUM(CASE LimitCov WHEN 2 THEN Limit ELSE 0 END), 0) AS PolLimit2Other, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN LimitType ELSE 0 END), 0) AS PolLimitType3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 3 THEN Limit ELSE 0 END), 0) AS PolLimit3Contents, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode4BI, 
-    ISNULL(SUM(CASE LimitCov WHEN 4 THEN LimitType ELSE 0 END), 0) AS PolLimitType4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 4 THEN Limit ELSE 0 END), 0) AS PolLimit4BI, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN LimitType ELSE 0 END), 0) AS PolLimitType5PD, 
-	ISNULL(SUM(CASE LimitCov WHEN 5 THEN Limit ELSE 0 END), 0) AS PolLimit5PD, 
-    ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitCode ELSE 0 END), 0) AS PolLimitCode6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN LimitType ELSE 0 END), 0) AS PolLimitType6All, 
-	ISNULL(SUM(CASE LimitCov WHEN 6 THEN Limit ELSE 0 END), 0) AS PolLimit6All
-FROM  Accounts acc INNER JOIN Policies pol 
-	ON acc.AccID = pol.AccID 
-		LEFT JOIN  dbo.PolicyFinancials polf
-	ON pol.PolID = polf.PolID
-GROUP BY pol.AccID, pol.PolID, ISNULL(polf.PerilCode, pol.PerilsCovered), Acc.Currency, 
-	CASE WHEN polf.PolID IS NULL THEN 'No' ELSE 'Yes' END
-
-
-
-GO
-/****** Object:  View [dbo].[vStepFunctions]    Script Date: 30/12/2019 10:18:21 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-
-
-
-
-
-CREATE VIEW [dbo].[vStepFunctions]
-AS
-SELECT        sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
-		AS TriggerBuildingStart, 
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
-		AS TriggerBuildingEnd, 
-    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
-		AS DeductibleBuilding,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
-		AS PayoutBuildingStart,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
-		AS PayoutBuildingEnd,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 1 AND sf.StepTriggerType in (1, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
-		AS PayOutLimitBuilding,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerStart ELSE 0 END), 0) 
-		AS TriggerContentsStart, 
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.TriggerEnd ELSE 0 END), 0) 
-		AS TriggerContentsEnd, 
-    ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN Deductible ELSE 0 END), 0) 
-		AS DeductibleContents,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutStart ELSE 0 END), 0) 
-		AS PayOutContentsStart,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutEnd ELSE 0 END), 0) 
-		AS PayOutContentsEnd,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 3 AND sf.StepTriggerType in (2, 3, 4, 5) THEN s.PayoutLimit ELSE 0 END), 0) 
-		AS PayOutLimitContents,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerStart ELSE 0 END), 0) 
-		AS TriggerBuildingContentsStart,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.TriggerEnd ELSE 0 END), 0) 
-		AS TriggerBuildingContentsEnd,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN Deductible ELSE 0 END), 0) 
-		AS DeductibleBuildingContents,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutStart ELSE 0 END), 0) 
-		AS PayOutBuildingContentsStart,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutEnd ELSE 0 END), 0) 
-		AS PayOutBuildingContentsEnd,
-	ISNULL(SUM(CASE WHEN s.StepTriggerCov = 5 AND sf.StepTriggerType = 3 THEN s.PayoutLimit ELSE 0 END), 0) 
-		AS PayOutLimitBuildingContents,
-	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
-FROM  StepFunctions sf INNER JOIN Policies pol
-	ON sf.PolID = pol.PolID INNER JOIN Steps s
-	ON sf.StepFuncID = s.StepFuncID
-GROUP BY sf.PolID, sf.StepFunctionName, sf.PerilCode, s.StepNumber, sf.StepTriggerType, s.PayoutType, s.TriggerType,
-	s.ExtraExpenseFactor, s.ExtraExpenseLimit, s.DebrisRemovalFactor, s.MinimumTIV, s.ScaleFactor, s.IsLimitAtDamage
-
-
-
-
-GO
-/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_AccountFinancials_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_AccountFinancials_AccID] ON [dbo].[AccountFinancials]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Accounts_AccName]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Accounts_AccName]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_AccName] ON [dbo].[Accounts]
 (
 	[AccName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Accounts_Number]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Accounts_Number]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Accounts_Number] ON [dbo].[Accounts]
 (
 	[AccNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ConditionFinancials_CondID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ConditionFinancials_CondID] ON [dbo].[ConditionFinancials]
 (
 	[CondID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Conditions_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Conditions_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_AccID] ON [dbo].[Conditions]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Conditions_CondName]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Conditions_CondName]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Conditions_CondName] ON [dbo].[Conditions]
 (
 	[CondName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_FlexiAcc_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiAcc_AccID] ON [dbo].[FlexiAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_FlexiLoc_LocID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiLoc_LocID] ON [dbo].[FlexiLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_FlexiPol_PolID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_FlexiPol_PolID] ON [dbo].[FlexiPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_LocationFinancials_LocID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_LocationFinancials_LocID] ON [dbo].[LocationFinancials]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Locations_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Locations_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_AccID] ON [dbo].[Locations]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Locations_CountryCode]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_CountryCode] ON [dbo].[Locations]
 (
 	[CountryCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Locations_LocName]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Locations_LocName]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocName] ON [dbo].[Locations]
 (
 	[LocName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Locations_LocNumber]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Locations_LocNumber] ON [dbo].[Locations]
 (
 	[LocNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Policies_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Policies_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_AccID] ON [dbo].[Policies]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Policies_PolNumber]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Policies_PolNumber] ON [dbo].[Policies]
 (
 	[PolNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_PolicyFinancials_PolID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_PolicyFinancials_PolID] ON [dbo].[PolicyFinancials]
 (
 	[PolFinID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_PortAcc_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_PortAcc_AccID] ON [dbo].[PortAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Portfolios_PortName]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortName] ON [dbo].[Portfolios]
 (
 	[PortName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_Portfolios_PortNumber]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_Portfolios_PortNumber] ON [dbo].[Portfolios]
 (
 	[PortNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsAcc_AccID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsAcc_AccID] ON [dbo].[ReinsAcc]
 (
 	[AccID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsLoc_LocID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_LocID] ON [dbo].[ReinsLoc]
 (
 	[LocID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsLoc_ReinsID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsLoc_ReinsID] ON [dbo].[ReinsLoc]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsPol_PolID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsPol_PolID] ON [dbo].[ReinsPol]
 (
 	[PolID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsReinstatements_ReinsID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsReinstatements_ReinsID] ON [dbo].[ReinsReinstatements]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
-
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsName]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsName] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsuranceInfo_ReinsNumber]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceInfo_ReinsNumber] ON [dbo].[ReinsuranceInfo]
 (
 	[ReinsNumber] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_ReinsuranceScope_ReinsID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_ReinsuranceScope_ReinsID] ON [dbo].[ReinsuranceScope]
 (
 	[ReinsID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 30/12/2019 10:18:21 ******/
+/****** Object:  Index [IX_StepFunctions_PolID]    Script Date: 09/04/2020 10:44:56 ******/
 CREATE NONCLUSTERED INDEX [IX_StepFunctions_PolID] ON [dbo].[StepFunctions]
 (
 	[PolID] ASC
