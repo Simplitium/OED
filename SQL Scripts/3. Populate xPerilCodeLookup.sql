@@ -154,4 +154,3 @@ VALUES (1, 'Earthquake - Shake only', 'QEQ', 'No'),
 SELECT *
 FROM xPerilCodes
 */
-
